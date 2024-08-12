@@ -25,15 +25,15 @@ header.hero {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Zentriert das Logo und die Navigation vertikal */
-    padding: 20px 50px; /* Abstand um den Rand der Navigation */
+    align-items: center; 
+    padding: 20px 50px; 
     position: relative;
     z-index: 1;
 }
 
 .logo img {
-    height: 50px; /* Anpassung der Logo-Höhe */
-    width: auto; /* Automatische Breite basierend auf der Höhe */
+    height: 50px; 
+    width: auto; 
 }
 
 .nav-links {
