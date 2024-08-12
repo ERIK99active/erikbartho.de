@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     color: #fff;
-    background-color: #1A202C;
+    background-color: #0a1724;
 }
 
 header.hero {
@@ -32,7 +32,7 @@ header.hero {
 }
 
 .logo img {
-    height: 50px; 
+    height: 35px; 
     width: auto; 
 }
 
@@ -80,7 +80,7 @@ header.hero {
 }
 
 .cta-button {
-    background-color: #FF6B35;
+    background-color: #e38026;
     color: #fff;
     padding: 15px 30px;
     border-radius: 30px;
