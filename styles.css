@@ -128,3 +128,14 @@ header.hero {
 .service-card p {
     font-size: 16px;
 }
+
+@font-face {
+    font-family: 'MeineSchriftart';
+    src: url('fonts/futura/futur.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'futura', sans-serif; 
+}
