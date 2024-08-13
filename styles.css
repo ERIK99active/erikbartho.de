@@ -190,13 +190,13 @@ header.hero {
 /* Allgemeines Layout für die Galerie */
 .gallery-section {
     text-align: center;
-    padding: 20px 0;
+    padding: 0px 0;
     background-color: #0b1222; /* Hintergrundfarbe */
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Drei Spalten für die Bilder */
+    grid-template-columns: repeat(2, 1fr); /* Drei Spalten für die Bilder */
     gap: 0px; /* Geringer Abstand zwischen den Bildern */
     justify-content: center;
 }
