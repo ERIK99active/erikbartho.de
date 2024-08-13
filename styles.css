@@ -136,6 +136,96 @@ header.hero {
     font-style: normal;
 }
 
-body {
-    font-family: 'futura', sans-serif; 
+.carousel-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.carousel-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Galerie-Sektion */
+.gallery-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.gallery-row img {
+    max-width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-row img:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.toggle-gallery {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
