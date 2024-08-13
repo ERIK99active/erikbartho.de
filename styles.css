@@ -197,7 +197,7 @@ header.hero {
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Drei Spalten für die Bilder */
-    gap: 10px; /* Geringer Abstand zwischen den Bildern */
+    gap: 0px; /* Geringer Abstand zwischen den Bildern */
     justify-content: center;
 }
 
