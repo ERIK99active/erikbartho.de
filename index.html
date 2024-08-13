@@ -64,46 +64,97 @@
 </head>
 <body>
 
-    <!-- Andere Sektionen... -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erik Bartho Media</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <video autoplay muted loop class="background-video">
+            <source src="videos/Test_Showreel_Stumm_Kurz.mp4" type="video/mp4">
+            Dein Browser unterstützt keine Videos.
+        </video>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/Erik_Bartho_Media_Logo_WeißaNichts_500x500.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>-</h1>
+        </div>
+    </header>
 
-    <!-- Karussell Sektion -->
+    <section class="intro">
+        <h2>Erreichen Sie Ihre Unternehmensziele durch einen Film</h2>
+        <p>Nutzen Sie das bahnbrechende Instrument dieser Ära, um Ihren Ruf als führender Anbieter in Ihrem Bereich zu festigen und dadurch langfristig Kundenbindung und Mitarbeitergewinnung zu steigern.</p>
+        <a href="#beratung" class="cta-button">Unverbindliche Beratung</a>
+    </section>
+
+    <section class="services">
+        <h2>Unsere Leistungen</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="Images/villa_1.1.png" alt="Immobilien Aufnahmen">
+                <h3>Immobilien Aufnahmen</h3>
+                <p>Sie wollen Ihre Immobilie auf Social Media präsentieren und ihre Sichtbarkeit steigern.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/images/branded_documentaries.png" alt="Branded Documentaries">
+                <h3>Branded Documentaries</h3>
+                <p>Die meisten Geschichten sind schon längst geschrieben und warten nur darauf erzählt zu werden.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/images/recruiting_video.png" alt="Recruiting Video">
+                <h3>Recruiting Video</h3>
+                <p>Zeigen Sie Ihren Wunschkandidaten, warum Sie der bessere Arbeitgeber sind.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="carousel-section">
-        <h2>Unsere letzten Arbeiten</h2>
-        <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <video src="assets/videos/video1.mp4" controls></video>
-                </div>
-                <div class="carousel-item">
-                    <video src="assets/videos/video2.mp4" controls></video>
-                </div>
-                <div class="carousel-item">
-                    <video src="assets/videos/video3.mp4" controls></video>
-                </div>
-            </div>
-            <button class="carousel-prev">←</button>
-            <button class="carousel-next">→</button>
-        </div>
-    </section>
+      <h2>Unsere letzten Arbeiten</h2>
+      <div class="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item">
+                  <video src="assets/videos/video1.mp4" controls></video>
+              </div>
+              <div class="carousel-item">
+                  <video src="assets/videos/video2.mp4" controls></video>
+              </div>
+              <div class="carousel-item">
+                  <video src="assets/videos/video3.mp4" controls></video>
+              </div>
+          </div>
+          <button class="carousel-prev">←</button>
+          <button class="carousel-next">→</button>
+      </div>
+  </section>
+  
+  <section class="gallery-section">
+      <h2>Galerie</h2>
+      <div class="gallery">
+          <div class="gallery-row">
+              <img src="assets/images/image1.jpg" alt="Bild 1">
+              <img src="assets/images/image2.jpg" alt="Bild 2">
+              <img src="assets/images/image3.jpg" alt="Bild 3">
+          </div>
+          <div class="gallery-row hidden">
+              <img src="assets/images/image4.jpg" alt="Bild 4">
+              <img src="assets/images/image5.jpg" alt="Bild 5">
+              <img src="assets/images/image6.jpg" alt="Bild 6">
+          </div>
+      </div>
+      <button class="toggle-gallery">Mehr anzeigen</button>
+  </section>
 
-    <!-- Galerie Sektion -->
-    <section class="gallery-section">
-        <h2>Galerie</h2>
-        <div class="gallery">
-            <div class="gallery-row">
-                <img src="assets/images/image1.jpg" alt="Bild 1">
-                <img src="assets/images/image2.jpg" alt="Bild 2">
-                <img src="assets/images/image3.jpg" alt="Bild 3">
-            </div>
-            <div class="gallery-row hidden">
-                <img src="assets/images/image4.jpg" alt="Bild 4">
-                <img src="assets/images/image5.jpg" alt="Bild 5">
-                <img src="assets/images/image6.jpg" alt="Bild 6">
-            </div>
-        </div>
-        <button class="toggle-gallery">Mehr anzeigen</button>
-    </section>
-
-    <script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
