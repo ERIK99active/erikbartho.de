@@ -231,3 +231,25 @@ header.hero {
     background-color: #d87400;
 }
 
+/* Center the Gallery Title */
+.gallery-section h2 {
+    text-align: center; /* Centers the text horizontally */
+    margin-bottom: 20px; /* Adds some space between the title and the images */
+}
+
+/* Gallery Styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid with minimum width */
+    grid-gap: 10px; /* Space between images */
+    justify-items: center; /* Center the images horizontally in their cells */
+}
+
+/* Image Styling */
+.gallery img {
+    width: 100%; /* Ensures images fill their grid cells */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners to the images */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+    object-fit: cover; /* Ensures images are cropped if they don't fit perfectly in the grid */
+}
