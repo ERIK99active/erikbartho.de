@@ -187,97 +187,31 @@ header.hero {
     right: 10px;
 }
 
-/* Galerie Sektion */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Abstand zwischen den Bildern */
-    padding: 20px; /* Abstand zum Rand des Containers */
-}
-
-.gallery-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.gallery img {
-    width: 300px; /* Passe die Größe der Bilder an */
-    height: auto; /* Erhalte das Seitenverhältnis der Bilder */
-    background-color: #0b1a2d; /* Hintergrundfarbe um die Bilder */
-    padding: 10px; /* Platz zwischen Bild und Hintergrundfarbe */
-    border-radius: 10px; /* Optionale abgerundete Ecken */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Schatteneffekt */
-}
-
-.hidden {
-    display: none;
-}
-
-.toggle-gallery {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #f28500;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.toggle-gallery:hover {
-    background-color: #d87400;
-}
-
-/* Center the Gallery Title */
-.gallery-section h2 {
-    text-align: center; /* Centers the text horizontally */
-    margin-bottom: 20px; /* Adds some space between the title and the images */
-}
-
-/* Gallery Styling */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid with minimum width */
-    grid-gap: 10px; /* Space between images */
-    justify-items: center; /* Center the images horizontally in their cells */
-}
-
-/* Image Styling */
-.gallery img {
-    width: 100%; /* Ensures images fill their grid cells */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 10px; /* Optional: Adds rounded corners to the images */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
-    object-fit: cover; /* Ensures images are cropped if they don't fit perfectly in the grid */
-}
 /* Allgemeines Layout für die Galerie */
 .gallery-section {
     text-align: center;
-    padding: 50px 0;
-    background-color: #0b1222; /* Hintergrundfarbe anpassen */
+    padding: 20px 0;
+    background-color: #0b1222; /* Hintergrundfarbe */
 }
 
 .gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Drei Spalten für die Bilder */
+    gap: 10px; /* Geringer Abstand zwischen den Bildern */
     justify-content: center;
-    flex-wrap: wrap; /* Elemente umbrochen wenn Platz fehlt */
-    gap: 20px; /* Abstand zwischen den Bildern */
 }
 
 .gallery img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    object-fit: cover; /* Bilder proportional zuschneiden */
 }
 
 /* Überschrift für Galerie zentrieren */
 .gallery-section h2 {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: bold;
     color: white;
     text-align: center;
@@ -299,9 +233,20 @@ header.hero {
     background-color: #e07b00;
 }
 
-/* Responsive Design */
+/* Responsive Design für kleinere Bildschirme */
 @media (max-width: 768px) {
     .gallery {
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten auf kleineren Bildschirmen */
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Eine Spalte auf sehr kleinen Bildschirmen */
     }
 }
