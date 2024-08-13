@@ -190,7 +190,7 @@ header.hero {
 /* Allgemeines Layout für die Galerie */
 .gallery-section {
     text-align: center;
-    padding: 0px 0;
+    padding: 40px 0;
     background-color: #0b1222; /* Hintergrundfarbe */
 }
 
@@ -204,7 +204,7 @@ header.hero {
 .gallery img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 0px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     object-fit: cover; /* Bilder proportional zuschneiden */
 }
