@@ -187,33 +187,28 @@ header.hero {
     right: 10px;
 }
 
-/* Galerie-Sektion */
-.gallery-section {
-    padding: 50px 0;
-    text-align: center;
-}
-
+/* Galerie Sektion */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px; /* Abstand zwischen den Bildern */
+    padding: 20px; /* Abstand zum Rand des Containers */
 }
 
 .gallery-row {
     display: flex;
     justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
-.gallery-row img {
-    max-width: 100%;
-    margin: 5px;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.gallery-row img:hover {
-    transform: scale(1.05);
+.gallery img {
+    width: 300px; /* Passe die Größe der Bilder an */
+    height: auto; /* Erhalte das Seitenverhältnis der Bilder */
+    background-color: #0b1a2d; /* Hintergrundfarbe um die Bilder */
+    padding: 10px; /* Platz zwischen Bild und Hintergrundfarbe */
+    border-radius: 10px; /* Optionale abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Schatteneffekt */
 }
 
 .hidden {
@@ -221,11 +216,18 @@ header.hero {
 }
 
 .toggle-gallery {
-    margin-top: 20px;
+    display: block;
+    margin: 20px auto;
     padding: 10px 20px;
-    background-color: #555;
-    color: #fff;
+    background-color: #f28500;
+    color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
+
+.toggle-gallery:hover {
+    background-color: #d87400;
+}
+
