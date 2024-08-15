@@ -252,3 +252,7 @@ header.hero {
         grid-template-columns: 1fr; /* Eine Spalte auf sehr kleinen Bildschirmen */
     }
 }
+
+.hidden {
+    display: none;
+}
