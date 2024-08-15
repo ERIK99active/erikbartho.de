@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Karussell-Funktionalität
     const carouselInner = document.querySelector('.carousel-inner');
     const carouselItems = document.querySelectorAll('.carousel-item');
     const prevButton = document.querySelector('.carousel-prev');
@@ -18,19 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = (currentIndex < carouselItems.length - 1) ? currentIndex + 1 : 0;
         updateCarousel();
     });
-});
 
-document.querySelector('.toggle-gallery').addEventListener('click', function() {
-    // Alle versteckten Bilder sichtbar machen
-    document.querySelectorAll('.hidden').forEach(function(image) {
-        image.classList.remove('hidden');
+    // Galerie-Funktionalität
+    const toggleGalleryButton = document.querySelector('.toggle-gallery');
+    const hiddenImages = document.querySelectorAll('.gallery-row.hidden');
+
+    toggleGalleryButton.addEventListener('click', function() {
+        hiddenImages.forEach(function(imageRow) {
+            imageRow.classList.remove('hidden');
+        });
+
+        // Button ausblenden, wenn alle Bilder sichtbar sind
+        this.style.display = 'none';
     });
-
-    // Button ausblenden, wenn alle Bilder sichtbar sind
-    this.style.display = 'none';
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM vollständig geladen und analysiert");
-    // Der restliche Code bleibt gleich
 });
