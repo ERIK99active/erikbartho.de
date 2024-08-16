@@ -32,11 +32,4 @@ document.addEventListener('DOMContentLoaded', function() {
         // Button ausblenden, wenn alle Bilder sichtbar sind
         this.style.display = 'none';
     });
-
-document.querySelector('.toggle-gallery').addEventListener('click', function() {
-    let images = document.querySelectorAll('.gallery img.hidden');
-    images.forEach(image => {
-        image.classList.toggle('hidden');
-    });
-    this.style.display = 'none'; // Button nach dem ersten Klick ausblenden
 });
