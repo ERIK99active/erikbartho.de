@@ -293,24 +293,57 @@
     </div>
   </section>
 
-<div class="contact-form" id="kontakt">
+  <div class="contact-form" id="kontakt">
     <h2>Kontaktformular</h2>
-    <form action="contact.php" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Dein Name" required>
-    
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" placeholder="Deine E-Mail" required>
-    
-        <label for="subject">Betreff:</label>
-        <input type="text" id="subject" name="subject" placeholder="Betreff" required>
-    
-        <label for="message">Nachricht:</label>
-        <textarea id="message" name="message" rows="6" placeholder="Deine Nachricht" required></textarea>
-    
-        <input type="submit" value="Senden">
-    </form>    
-</div>
+
+
+<form id="contactForm" method="POST" action="contact.php">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Dein Name" required>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" placeholder="Deine E-Mail" required>
+
+    <label for="subject">Betreff:</label>
+    <input type="text" id="subject" name="subject" placeholder="Betreff" required>
+
+    <label for="message">Nachricht:</label>
+    <textarea id="message" name="message" rows="6" placeholder="Deine Nachricht" required></textarea>
+
+    <input type="submit" value="Senden">
+</form>
+
+<p id="successMessage"></p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let formData = new FormData(this);
+        let successMessage = document.getElementById("successMessage");
+
+        fetch("contact.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            successMessage.textContent = data.message;
+            successMessage.style.color = data.status === "success" ? "green" : "red";
+            if (data.status === "success") {
+                document.getElementById("contactForm").reset();
+            }
+        })
+        .catch(error => {
+            successMessage.textContent = "Ein Fehler ist aufgetreten.";
+            successMessage.style.color = "red";
+        });
+    });
+});
+</script>
+
+
 
 <section class="gallery-section">
     <h2>Galerie</h2>
