@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,7 @@
 <body>
     <header class="hero">
         <video autoplay muted loop class="background-video">
-            <source src="videos/Trailer_Website_V1_hd.mp4" type="video/mp4">
+            <source src="videos/Test_Showreel_Stumm_Kurz.mp4" type="video/mp4">
             Dein Browser unterstützt keine Videos.
         </video>
         <nav class="navbar">
@@ -37,60 +37,64 @@
     </header>
 
     <section class="intro">
-        <h2>Präsentieren Sie Immobilien exklusiv und professionell</h2>
-        <p>Heben Sie Ihre Objekte mit hochwertigen Immobilienvideos auf Social Media und Ihrer Website hervor. Durch geführte Rundgänge und eindrucksvolle Aufnahmen schaffen wir ein exklusives Erlebnis, das potenzielle Käufer überzeugt. Mit professioneller Technik und einem Auge fürs Detail setzen wir Ihre Immobilie perfekt in Szene – im Raum Karlsruhe, Baden-Baden und Bühl.</p>
+        <h2>Erreichen Sie Ihre Unternehmensziele durch einen Film</h2>
+        <p>Nutzen Sie das bahnbrechende Instrument dieser Ära, um Ihren Ruf als führender Anbieter in Ihrem Bereich zu festigen und dadurch langfristig Kundenbindung und Mitarbeitergewinnung zu steigern.</p>
         <!-- Der CTA-Button verweist ebenfalls auf #kontakt -->
         <a href="#kontakt" class="cta-button">Unverbindliche Beratung</a>
     </section>
-   
+
     <section class="services">
         <h2>Aktuelle Leistungen</h2>
         <div class="card-container">
             <div class="service-card" onclick="toggleCard(this)">
                 <div class="service-card-inner">
+                    <!-- Vorderseite -->
                     <div class="service-card-front">
                         <div class="front-wrapper">
                             <video muted loop autoplay>
-                                <source src="videos/Website_Service_Card_1_Video_Loop_HD.mp4" type="video/mp4">
+                                <source src="169.mp4" type="video/mp4">
                                 Ihr Browser unterstützt keine Videos.
                             </video>
                         </div>
+                       
                         <h3>Social Media für Immobilien – Aufmerksamkeit, die verkauft</h3>
                         <p>Professionelle Videos, die Ihre Objekte ins beste Licht rücken.</p>
                     </div>
+                    <!-- Rückseite -->
                     <div class="service-card-back">
                         <div class="back-container">
+                        
                             <video muted loop autoplay class="back-video">
-                                <source src="videos/Website_Kachel_Rückseite_Video_1_HD.mp4" type="video/mp4">
+                                <source src="back.mp4" type="video/mp4">
                                 Ihr Browser unterstützt keine Videos.
                             </video>
                             <div class="price-columns">
                                 <div>
-                                    <strong>Basis-Paket – Perfekt für kleinere Objekte <br>349 €</strong>
+                                    <strong>Basis-Paket: <br>0 €</strong>
                                     <ul>
                                         <li>30-sekündiges Instagram Reel</li>
-                                        <li>Ideal für Wohnungen oder kleinere Immobilien</li>
-                                        <li>Grundlegender Schnitt mit Musik & Farbkorrektur</li>
-                                        <li>Branding-Anpassung für einen einheitlichen Look</li>
+                                        <li>Optimal für eine Wohnung</li>
+                                        <li>Professionelle Aufnahmen des Objekts</li>
+                                        <li>Grundlegender Schnitt mit Musik</li>
+                                        <li>Bearbeitung mit Farbkorrektur und Branding</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <strong>Premium-Paket – Mehr Details, mehr Wirkung <br>599 €</strong>
+                                    <strong>Premium-Paket: <br>0 €</strong>
                                     <ul>
-                                        <li>60-sekündiges Instagram Reel mit Drohnenaufnahmen</li>
-                                        <li>Ideal für Häuser und größere Objekte</li>
-                                        <li>Zusätzliche Innenraum-Details für mehr Atmosphäre</li>
-                                        <li>Erweiterte Bearbeitung mit Farbkorrektur & Branding</li>
-                                        <li>Optimiert für Social Media & Webseiten</li>
+                                        <li>60-sekündiges Instagram Reel</li>
+                                        <li>Optimal für ein Haus</li>
+                                        <li>Drohnenaufnahmen und Innenraum-Details</li>
+                                        <li>Erweiterte Bearbeitung mit Farbkorrektur und Branding</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <strong>Deluxe-Paket – Präsentation für Immobilien <br>999 €</strong>
+                                    <strong>Deluxe-Paket: <br>0 €</strong>
                                     <ul>
                                         <li>90-sekündiges Immobilien-Tour-Video</li>
-                                        <li>Optimal für Villen oder Luxus-Immobilien</li>
-                                        <li>Geführte Besichtigung mit Makler für persönliche Ansprache</li>
-                                        <li>Professionelle Inszenierung für maximale Wirkung</li>
+                                        <li>Optimal für eine Villa, die mehr Aufmerksamkeit braucht</li>
+                                        <li>Makler-geführte Besichtigung</li>
+                                        <li>Premium-Bearbeitung inkl. Farbkorrektur/Untertitel/Branding</li>
                                     </ul>
                                 </div>
                             </div>
@@ -98,11 +102,8 @@
                     </div>
                 </div>
             </div>
-    
-            <!-- Weitere Kacheln falls notwendig -->
         </div>
     </section>
-    
     
     <script>
         function toggleCard(card) {
@@ -117,109 +118,43 @@
         }
     </script>
 
-<section class="extra-services">
-    <h2>Zusätzliche Leistungen</h2>
-    <div class="services-container">
-        <div class="service-box">
-            <img src="icons/drone_icon_1.png" alt="Drohnenfotografie">
-            <h3>Luftaufnahmen</h3>
-            <p>Hochwertige Luftbilder & Videos für eine beeindruckende Immobilienpräsentation.</p>
-        </div>
-        <div class="service-box">
-            <img src="icons/camera_icon_2.png" alt="HDR-Innenaufnahmen">
-            <h3>HDR-Innenaufnahmen</h3>
-            <p>Detailreiche, professionelle Innenraumfotografie für mehr Atmosphäre.</p>
-        </div>
-    </div>
-</section>
-
-<style>
-    .extra-services {
-        text-align: center;
-        padding: 50px 20px;
-        background-color: none;
-        margin-bottom: 180px
-        
-    }
-    .extra-services h2 {
-        font-size: 28px;
-        margin-bottom: 70px;
-    }
-    .services-container {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-    }
-    .service-box {
-        background: #e2e2d2;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 300px;
-        text-align: center;
-        box-shadow:  0px 0px 11px #e2e2d2,
-        0px 0px 2px #e2e2d2;
-    }
-    .service-box img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 1px;
-        margin-top: 8px;
-    }
-    .service-box h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-        color: #0a233d;
-    }
-    .service-box p {
-        font-size: 14px;
-        color: #0a233d;
-
-
-    }
-</style>
-
-
-
     <section class="process-section">
         <h2>Prozess</h2>
         <div class="process-container">
             <div class="process-step">
                 <div class="step-circle">1</div>
                 <h3>Konzept Erstellung</h3>
-                <p>Wir analysieren Ihre Anforderungen und entwickeln eine maßgeschneiderte Strategie für Ihr Video. Dabei definieren wir Stil, Zielsetzung und die visuelle Sprache, die am besten zu Ihrer Marke passt.
-                </p>
+                <p>Wir analysieren Ihre Anforderungen.</p>
             </div>
             <div class="process-line"></div>
             <div class="process-step">
                 <div class="step-circle">2</div>
                 <h3>Zielgruppen Findung</h3>
-                <p>Wir identifizieren Ihre gewünschte Zielgruppe und passen das Konzept gezielt darauf an. Dies stellt sicher, dass das Video die richtige Wirkung erzielt und Ihre Botschaft effektiv vermittelt wird.</p>
+                <p>Wir finden ihre gewünschte Zielgruppe.</p>
             </div>
             <div class="process-line"></div>
             <div class="process-step">
                 <div class="step-circle">3</div>
                 <h3>Produktion</h3>
-                <p>Mit professionellem Equipment setzen wir den Plan in die Realität um. Die Sony A7S III und hochwertige G Master- & Sigma-Objektive sorgen für gestochen scharfe Bilder und beeindruckende Tiefenunschärfe. Drohnen und Gimbals ermöglichen dynamische, kinoreife Aufnahmen.</p>
+                <p>Wir setzen den Plan in die Realität um.</p>
             </div>
             <div class="process-line"></div>
             <div class="process-step">
                 <div class="step-circle">4</div>
                 <h3>Postproduktion</h3>
-                <p>Nach dem Dreh beginnt die kreative Bearbeitung: Schnitt, Farbkorrektur und visuelle Effekte sorgen für ein stimmiges Endprodukt. Jedes Detail wird optimiert, um die Story wirkungsvoll zu erzählen.</p>
+                <p>Wir fügen alles zu einem fertigen Endprodukt zusammen.</p>
             </div>
             <div class="process-line"></div>
             <div class="process-step">
                 <div class="step-circle">5</div>
                 <h3>Sounddesign</h3>
-                <p>Wir untermalen Ihr Video mit passender Musik und professionellen Soundeffekten. Eine klare, harmonische Tonspur verstärkt die emotionale Wirkung und sorgt für ein rundum hochwertiges Erlebnis.</p>
+                <p>Wir untermalen ihr Video mit der passenden Musik.</p>
             </div>
             <div class="process-line"></div>
             <div class="process-step">
                 <div class="step-circle">6</div>
                 <h3>Lieferung</h3>
-                <p>Das fertige Video wird in bester Qualität exportiert und für verschiedene Plattformen optimiert. Ob für Social Media, Websites oder Präsentationen</p>
+                <p>Das Endprodukt wird geliefert und übertrifft Ihre Erwartungen.</p>
             </div>
         </div>
     </section>
@@ -276,7 +211,8 @@
         <div class="about-me-text">
             <h2>Über mich</h2>
             <p>Ich bin Erik Bartho, ein 23-jähriger professioneller Videograf und Fotograf mit einer Leidenschaft für fesselnde visuelle Geschichten. 
-                Mein Fokus liegt auf der Immobilienbranche, wo ich beeindruckende Videos und Fotos für Social Media erstelle, um die besten Merkmale von Häusern, Wohnungen und Immobilien hervorzuheben.
+                Ich habe mich auf Immobilien spezialisiert und erstelle beeindruckende Videos für Social Media, die die besten Merkmale von Häusern, Wohnungen 
+                und Immobilien hervorheben, um potenzielle Käufer anzuziehen und den Verkaufsprozess zu beschleunigen.
             </p>
         </div>
     </div>
@@ -286,14 +222,14 @@
     <h2>Unsere Partner</h2>
     <div class="logo-container">
       <img src="Images/Negra_Logo_final_weiß_ohne_Ornament.png" alt="Unternehmen 1" class="logo">
-      <img src="Images/CCI-Logo_rgb_GmbH-Co-1.png" alt="Unternehmen 2" class="logo">
-      <img src="Images/Sandberg_Estates_Logo_Weiß.png" alt="Unternehmen 3" class="logo">
-      <img src="Images/B-S-Technic_Logo_überarbeitet_klein.png" alt="Unternehmen 4" class="logo">
-      <img src="Images/2021_Logo_white_distance.png" alt="Unternehmen 5" class="logo">
+      <img src="Images/Sandberg_Estates_Logo_Weiß.png" alt="Unternehmen 2" class="logo">
+      <img src="Images/B-S-Technic_Logo-erik.png" alt="Unternehmen 3" class="logo">
+      <img src="logo4.png" alt="Unternehmen 4" class="logo">
+      <img src="logo5.png" alt="Unternehmen 5" class="logo">
     </div>
   </section>
 
-  <div class="contact-form" id="kontakt">
+<div class="contact-form" id="kontakt">
     <h2>Kontaktformular</h2>
 
 
@@ -343,6 +279,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+
+
 </div>
 
 <section class="gallery-section">
@@ -352,31 +290,18 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="Images/Erik_Bartho_Website_Foto_10.jpg" alt="Drohnen Immobilienaufnahme High Qualtiy"> 
             <img src="Images/Erik_Bartho_Website_Foto_6.jpg" alt="Instagram Content Produktion High Quality">
             <img src="Images/Erik_Bartho_Website_Foto_11.jpg" alt="Drohnen Immobilienaufnahme High Qualtiy">
-            <img src="Images/CCI_Produktfoto_DSC03884_24_WebOp.jpg" alt="Drohnen Immobilienaufnahme High Qualtiy">
-            <img src="Images/CCI_Produktfoto_DSC03884_1_WebOp.jpg" alt="Drohnen Immobilienaufnahme High Qualtiy">
-            <img src="Images/000287230024.JPG" alt="Drohnen Immobilienaufnahme High Qualtiy">
-            <img src="Images/CCI_Produktfoto_DSC04360_52_WebOp.jpg" alt="High Quality Auto Fotos">
-            <img src="Images/Erik_Bartho_Website_Foto_5.jpg" alt="High Quality Auto Fotos">
+            <img src="Images/000287230024.JPG" alt="High Quality Auto Fotos">
+            <img src="Images/000287230027.jpg" alt="High Quality Auto Fotos">
             <img src="Images/000287230016.JPG" alt="High Quality Auto Fotos">
-            <img src="Images/Immobilie_2_WebOp.jpg" alt="High Quality Auto Fotos">
-            <img src="Images/Erik_Bartho_Website_Foto_13_WebOp.jpg" alt="High Quality Auto Fotos">
         </div>
         <div class="gallery-row hidden">
             <img src="Images/Erik_Bartho_Website_Foto_4.jpg" alt="Instagram Content Produktion High Quality">
-            <img src="Images//Immobilie_3_WebOp.jpg" alt="Instagram Content Produktion High Quality">
             <img src="Images/Erik_Bartho_Website_Foto_7.jpg" alt="Instagram Content Produktion High Quality">
             <img src="Images/Erik_Bartho_Website_Foto_1.jpg" alt="High Quality Auto Fotos">
             <img src="Images/000287230011.JPG" alt="High Quality Auto Fotos">
-            <img src="Images/Erik_Bartho_Website_Foto_13.jpg" alt="High Quality Auto Fotos">
-            <img src="Images/Erik_Bartho_Website_Foto_15.jpg" alt="High Quality Auto Fotos">
-            <img src="Images/Erik_Bartho_Website_Foto_14.jpg" alt="High Quality Auto Fotos">
-            <img src="Images/Negra_Carpet_50_Kopie_WebOp.jpg" alt="High Quality Auto Fotos">
         </div>
     </div>
 </section>
-
-
-
 
 <footer class="site-footer">
     <hr>
@@ -388,7 +313,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>© 2025 Erik Bartho Media</p>
         <nav class="footer-nav">
             <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Datenschutz</a>
+            <a href="impressum.html">AGB</a>
         </nav>
     </div>
 </footer>
@@ -440,7 +366,6 @@ document.addEventListener("DOMContentLoaded", function () {
         text-decoration: underline;
     }
 </style>
-
 <script>
     document.querySelector('.scroll-to-top').addEventListener('click', function(e) {
         e.preventDefault();
