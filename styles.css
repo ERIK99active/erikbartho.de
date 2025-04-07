@@ -1,0 +1,702 @@
+body {   /* Einheitliche Hintergrundfarbe */
+    font-family: futura, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #e2e2d2;
+    background: linear-gradient(
+        350deg,
+        hsl(200deg 64% 6%) 8%,
+        hsl(200deg 64% 6%) 23%,
+        hsl(200deg 64% 6%) 32%,
+        hsl(200deg 64% 6%) 39%,
+        hsl(200deg 64% 6%) 45%,
+        hsl(201deg 62% 7%) 50%,
+        hsl(203deg 57% 10%) 55%,
+        hsl(205deg 53% 14%) 60%,
+        hsl(208deg 48% 17%) 64%,
+        hsl(210deg 44% 20%) 68%,
+        hsl(210deg 44% 20%) 72%,
+        hsl(203deg 57% 10%) 83%,
+        hsl(203deg 57% 10%) 83%,
+        hsl(203deg 57% 10%) 83%,
+        hsl(201deg 62% 7%) 86%,
+        hsl(200deg 64% 6%) 89%,
+        hsl(200deg 64% 6%) 92%,
+        hsl(200deg 64% 6%) 95%,
+        hsl(200deg 64% 6%) 97%,
+        hsl(200deg 64% 6%) 100%
+      );
+    }
+
+
+
+header.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo img {
+    height: 35px;
+    width: auto;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #e2e2d2;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hero-content {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 20%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.intro {
+    text-align: center;
+    padding: 40px;
+    background: none; /* Einheitliche Hintergrundfarbe vom Body übernehmen */
+}
+
+.intro h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.intro p {
+    font-size: 18px;
+    margin-bottom: 80px;
+}
+
+.cta-button {
+    background-color: #d87212;
+    color: #e2e2d2;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* Stellt sicher, dass es wie ein Button dargestellt wird */
+    transition: background-color 0.3s ease; /* Weicher Übergang bei der Farbänderung */
+}
+
+.cta-button:hover {
+    background-color: #e47813; /* Farbe beim Hover ändern */
+}
+
+
+
+
+
+
+.services {
+    display: flex;
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    flex-direction: column; /* Optional, wenn Inhalte gestapelt werden sollen */
+    padding: 0px 20px;
+    min-height: 100vh; /* Stellt sicher, dass die Höhe den gesamten Viewport einnimmt */
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 0px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center; /* Zentriert die Kachel horizontal */
+    flex-wrap: wrap;
+}
+
+
+.service-card {
+    position: relative;
+    max-width: 900px; /* Maximalbreite */
+    min-width: 200px;
+    height: 700px; /* Standardhöhe für die Vorderseite */
+    text-align: center;
+    margin: 80px auto;
+    perspective: 1000px; /* Perspektive für 3D */
+    transition: height 0.6s ease, transform 0.6s ease; /* Übergang für Höhe und Drehung */
+}
+
+.service-card.flipped {
+    height: 700px; /* Höhe der Rückseite */
+    max-width: 900px; /* Maximalbreite */
+    min-width: 200px;
+}
+
+.service-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease; /* Dreh-Animation */
+    transform-style: preserve-3d;
+}
+
+.service-card.flipped .service-card-inner {
+    transform: rotateY(180deg); /* 3D-Drehung */
+}
+
+.service-card-front,
+.service-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Versteckt Rückseite */
+    border-radius: 40px; /* Weniger stark abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.service-card-front {
+    background-color: #e2e2d2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 40px;
+    box-shadow:  0px 0px 11px #e2e2d2,
+                 0px 0px 2px #e2e2d2;
+}
+
+.service-card:hover {
+    transform: scale(1.07);
+}
+
+.service-card-front video {
+    width: calc(100% - 40px); /* Reduziert die Breite um 20px (10px links/rechts) */
+    height: 60%; /* Höhe bleibt angepasst */
+    object-fit: cover;
+    margin: 19px auto; /* Zentriert das Video und fügt Rand hinzu */
+    border-radius: 16px; /* Leicht abgerundete Ecken für das Video */
+    display: block; /* Entfernt mögliche Inline-Abstände */
+    overflow: hidden; /* Beibehalten für den inneren Container */
+}
+
+.service-card-front h3 {
+    font-size: 28px;
+    margin: 15px 10px;
+    font-weight: bold;
+    color: #0a233d;
+    max-width: 95%;
+}
+
+.service-card-front p {
+    font-size: 22px;
+    margin: 0 10px 15px;
+    color: #0a233d;
+    margin-bottom: 50px;
+} 
+
+
+
+
+/* Rückseite der Karte */
+.service-card-back {
+    background-color: #06141B;
+    color: #e2e2d2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0px 0px 60px #06141B, 0px 0px 10px #06141B;
+    position: relative;
+    overflow: hidden;
+    height: 800px; /* Höhe bleibt gleich */
+    width: 1000px; /* Breitere Kachel für mehr Platz */
+    transform: rotateY(180deg); /* Flip-Effekt */
+}
+
+/* Innerer Container für die Rückseite */
+.back-container {
+    display: flex;
+    flex-direction: row; /* Video und Text nebeneinander */
+    gap: 40px; /* Abstand zwischen Video und Text */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Textkacheln */
+.price-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Abstand zwischen den Textkacheln */
+    width: 50%;
+    max-width: 550px; /* Maximale Breite */
+}
+
+/* Einzelne Textkachel */
+.price-columns div {
+    padding: 20px;
+    border: 1px solid #e2e2d2;
+    border-radius: 16px;
+    background-color: #e2e2d2;
+    color: #06141B;
+    text-align: left;
+    font-size: 15px; /* Kleinere Schriftgröße */
+    line-height: 1.4; /* Weniger Zeilenhöhe */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Aufzählungen */
+.price-columns ul {
+    list-style-type: disc;
+    margin: 10px 0 0;
+    padding-left: 20px;
+}
+
+.price-columns li {
+    margin-bottom: 8px; /* Kleinere Abstände zwischen den Punkten */
+}
+
+/* Video-Bereich */
+.service-card-back video {
+    width: auto;
+    height: 100%;
+    max-height: 95%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Stil für das Premium Paket auf der Rückseite */
+.service-card:nth-of-type(2) .service-card-back .price-columns div:nth-child(2) {
+    border: 3px solid #FFD700; /* Goldener Rahmen */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Weicher Glow */
+    padding: 15px; /* Leichter Abstand für mehr Hervorhebung */
+    border-radius: 20px; /* Leichte Abrundung für ein weiches Design */
+}
+
+
+
+/* Prozess-Sektion */
+.process-section {
+    text-align: center;
+    padding: 0px 20px;
+    background: none; /* Gleiche Hintergrundfarbe wie der Body */
+}
+
+.process-section h2 {
+    font-size: 32px;
+    color: #e2e2d2;
+    margin-bottom: 90px;
+}
+
+/* Container für den Prozess */
+.process-container {
+    display: flex;
+    align-items: flex-start; /* Elemente oben ausrichten */
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+/* Einzelner Schritt */
+.process-step {
+    text-align: center;
+    max-width: 220px;
+    position: relative;
+    transition: transform 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.process-step:hover {
+    transform: scale(1.09); /* Vergrößerung beim Hover */
+}
+
+/* Kreis für die Schritte */
+.step-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d87212;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Titel eines Schrittes */
+.process-step h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #e2e2d2;
+    min-height: 40px; /* Einheitliche Höhe für Titel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Beschreibung eines Schrittes */
+.process-step p {
+    font-size: 14px;
+    color: #e2e2d2;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .process-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+/* Grundlegende Stile für die Partner-Sektion */
+.partner-logos {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: none; /* Hintergrundfarbe */
+  }
+  
+  .partner-logos h2 {
+    font-size: 30px;
+    margin-bottom: 100px;
+    color: #e2e2d2; /* Textfarbe */
+  }
+  
+  /* Container für die Logos */
+  .logo-container {
+    display: flex;
+    flex-wrap: wrap; /* Logos umbrechen, wenn Platz fehlt */
+    justify-content: center;
+    gap: 50px; /* Vergrößerter Abstand zwischen den Logos */
+    margin-bottom: 300px;
+  }
+  
+  /* Stile für die Logos */
+  .logo {
+    max-height: 80px; /* Maximale Höhe für alle Logos */
+    width: auto; /* Breite proportional zur Höhe */
+    object-fit: contain; /* Verhindert Verzerrung */
+    filter: grayscale(0%); /* Graustufen für einheitlichen Look */
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    filter: grayscale(0); /* Farbe beim Hovern */
+    transform: scale(1.1); /* Leichtes Vergrößern beim Hovern */
+  }
+
+
+/* Über mich */
+.about-me {
+    padding: 230px 20px;
+    background: none; /* Einheitliche Hintergrundfarbe vom Body übernehmen */
+}
+
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.about-me-image img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.about-me-text {
+    max-width: 600px;
+    color: #e2e2d2;
+}
+
+.about-me-text h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #d87212;
+}
+
+.about-me-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Kontaktformular */
+.contact-form {
+    background-color: #e2e2d2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+    box-shadow:  33px 33px 66px #132b36,
+             -80px -80px 230px #132b36;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #0f1a26; 
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    resize: vertical; /* Nur vertikales Vergrößern erlaubt */
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* Padding und Border werden berücksichtigt */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+.contact-form input[type="submit"] {
+    background-color: #ff7d03;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: 0; /* Zentrierung */
+}
+
+
+.contact-form input[type="submit"]:hover {
+    background-color: #d87212 ; 
+}
+
+
+/* Galerie */
+.gallery-section {
+    font-size: 20px;
+    margin-bottom: 60px;
+    color: #e2e2d2; /* Textfarbe */
+    text-align: center;
+    background: none; /* Einheitliche Hintergrundfarbe vom Body übernehmen */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+
+/* Medienabfragen für Responsive Design */
+@media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* Impressum Styles */
+#impressum {
+    font-size: 18px;
+    color: #e2e2d2;
+    margin-top: 20px;
+    padding: 15px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; /* Adjust to match your page's width */
+    padding: 50px;
+}
+
+#impressum h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    max-width: 800px;
+
+
+}
+
+#impressum p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+footer {
+    max-width: 1200px;
+    margin-left: 20px;
+    margin-right: 20px; /* Optionaler Abstand von der rechten Seite */
+    margin-top: 80px;
+}
+
+
+
+@media (max-width:900px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .service-card {
+        /*border: 5px solid red;*/
+    }
+
+    .service-card-front {
+        padding: 0;
+    }
+
+    .service-card .service-card-front video {
+        width: 100% !important;
+        margin: 0 !important;
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+
+    .services {
+        display: block;
+    }
+
+    .service-card-back {
+        width: auto;
+    }
+
+    .back-container, .price-columns {
+        gap: 10px;
+    }
+
+    .back-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 15px;
+    }
+
+    video.back-video {
+        height: auto;
+        max-height: 90%;
+        max-width: 50%;
+        object-fit: cover;
+    }
+
+    .price-columns {
+        width: 45%;
+        max-width: 500px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .front-wrapper {
+        padding: 20px;
+    }
+    .service-card-inner {
+        height: 600px;
+    }
+    .price-columns {
+        max-height: 690px;
+    }
+    .price-columns {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+}
+@media (min-width:900px) {
+    .front-wrapper {
+        display: contents;
+    }
+}
+
+
+
