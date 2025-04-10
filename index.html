@@ -288,60 +288,68 @@
       <img src="Images/Negra_Logo_final_weiß_ohne_Ornament.png" alt="Negra Carpet" class="logo">
       <img src="Images/CCI-Logo_rgb_GmbH-Co-1.png" alt="CCI-vK" class="logo">
       <img src="Images/Sandberg_Estates_Logo_Weiß.png" alt="Sandberg Estates" class="logo">
-      <img src="Images/B_S_Technic_Logo_überarbeitet_klein.png" alt="B-S-Technic" class="logo">
+      <img src="Images/B_S_Technic_Logo_überarbeitet_klein.png" alt="B-S-Technic Logo" class="logo">
       <img src="Images/2021_Logo_white_distance.png" alt="99active" class="logo">
     </div>
   </section>
 
   <div class="contact-form" id="kontakt">
     <h2>Kontaktformular</h2>
-
-
-<form id="contactForm" method="POST" action="contact.php">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Dein Name" required>
-
-    <label for="email">E-Mail:</label>
-    <input type="email" id="email" name="email" placeholder="Deine E-Mail" required>
-
-    <label for="subject">Betreff:</label>
-    <input type="text" id="subject" name="subject" placeholder="Betreff" required>
-
-    <label for="message">Nachricht:</label>
-    <textarea id="message" name="message" rows="6" placeholder="Deine Nachricht" required></textarea>
-
-    <input type="submit" value="Senden">
-</form>
-
-<p id="successMessage"></p>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
-
-        let formData = new FormData(this);
-        let successMessage = document.getElementById("successMessage");
-
-        fetch("contact.php", {
+  
+    <form id="contactForm" method="POST" action="https://formspree.io/f/mqapwgqy">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Dein Name" required>
+  
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="_replyto" placeholder="Deine E-Mail" required>
+  
+      <label for="subject">Betreff:</label>
+      <input type="text" id="subject" name="subject" placeholder="Betreff" required>
+  
+      <label for="message">Nachricht:</label>
+      <textarea id="message" name="message" rows="6" placeholder="Deine Nachricht" required></textarea>
+  
+      <input type="submit" value="Senden">
+    </form>
+  
+    <p id="successMessage"></p>
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+  
+          const form = this;
+          const formData = new FormData(form);
+          const successMessage = document.getElementById("successMessage");
+  
+          fetch(form.action, {
             method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            successMessage.textContent = data.message;
-            successMessage.style.color = data.status === "success" ? "green" : "red";
-            if (data.status === "success") {
-                document.getElementById("contactForm").reset();
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
             }
-        })
-        .catch(error => {
-            successMessage.textContent = "Ein Fehler ist aufgetreten.";
+          })
+          .then(response => {
+            if (response.ok) {
+              successMessage.textContent = "Danke! Deine Nachricht wurde erfolgreich gesendet.";
+              successMessage.style.color = "green";
+              form.reset();
+            } else {
+              return response.json().then(data => {
+                throw new Error(data.error || "Ein Fehler ist aufgetreten.");
+              });
+            }
+          })
+          .catch(error => {
+            successMessage.textContent = error.message;
             successMessage.style.color = "red";
+          });
         });
-    });
-});
-</script>
+      });
+    </script>
+  </div>
+  
 
 </div>
 
