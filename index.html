@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        // Verhindert, dass der Browser beim Neuladen die Scrollposition speichert
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.addEventListener('load', function() {
-            window.scrollTo(0, 0);
-        });
-    </script>
-    <title>Erik Bartho</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            // Verhindert, dass der Browser beim Neuladen die Scrollposition speichert
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.addEventListener('load', function() {
+                window.scrollTo(0, 0);
+            });
+        </script>
+    
+        <title>Erik Bartho</title>
+        <link rel="stylesheet" href="styles.css">
+    
+        <!-- Favicons für Light Mode -->
+        <link rel="icon" type="image/png" href="/icons/erik_bartho_logo_32x32_black.png" sizes="32x32" media="(prefers-color-scheme: light)">
+        <link rel="icon" type="image/png" href="/icons/erik_bartho_logo_16x16_black.png" sizes="16x16" media="(prefers-color-scheme: light)">
+    
+        <!-- Favicons für Dark Mode -->
+        <link rel="icon" type="image/png" href="/icons/erik_bartho_logo_32x32_light.png" sizes="32x32" media="(prefers-color-scheme: dark)">
+        <link rel="icon" type="image/png" href="/icons/erik_bartho_logo_16x16_light.png" sizes="16x16" media="(prefers-color-scheme: dark)">
+    
+        <!-- Apple Touch Icon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/erik_bartho_apple_touch_icon_180x180.png">
+    
+        <!-- Android Chrome Icons -->
+        <link rel="icon" type="image/png" sizes="192x192" href="/icons/erik_bartho_android_chrome_192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/icons/erik_bartho_android_chrome_512x512.png">
+    
+        <!-- Safari Pinned Tab -->
+        <link rel="mask-icon" href="/icons/erik_bartho_pinned_tab_safari.svg" color="#5bbad5">
+    
+    </head>
+    
 <body>
     <header class="hero">
         <video autoplay muted loop class="background-video">
@@ -334,7 +356,10 @@
             if (response.ok) {
               successMessage.textContent = "Danke! Deine Nachricht wurde erfolgreich gesendet.";
               successMessage.style.color = "green";
-              form.reset();
+              orm.reset();
+              setTimeout(() => {
+                 successMessage.textContent = "";
+             }, 5000); // Nachricht nach 5 Sekunden ausblenden
             } else {
               return response.json().then(data => {
                 throw new Error(data.error || "Ein Fehler ist aufgetreten.");
