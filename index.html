@@ -37,36 +37,45 @@
     
     </head>
     
-    <body>
-        <!-- Preloader -->
-        <div id="preloader">
-          <div class="loader-bar-container">
-            <div id="loader-bar" class="loader-bar"></div>
-          </div>
-          <div id="loader-percentage" class="loader-percentage">0%</div>
-        </div>
+<!-- Preloader -->
+<div id="preloader">
+    <div class="loader-bar-container">
+      <div id="loader-bar" class="loader-bar"></div>
+    </div>
+    <div id="loader-percentage" class="loader-percentage">0%</div>
+  </div>
+  
+  <!-- Header mit Vimeo-Video -->
+  <header class="hero">
+    <div class="video-container">
+      <iframe
+        id="main-video"
+        src="https://player.vimeo.com/video/1075331336?h=8134bcdc99&autoplay=1&muted=1&background=1"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  
+    <nav class="navbar">
+      <div class="logo">
+        <img src="Images/Erik_Bartho_Media_Logo_WeißaNichts_500x500.png" alt="Logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+  
+    <div class="hero-content">
+      <h1></h1>
+    </div>
+  </header>
+  
       
       
-                <img src="Images/Erik_Bartho_Media_Logo_WeißaNichts_500x500.png" alt="Logo">
-        <header class="hero">
-            <video autoplay muted loop class="background-video" preload="auto" id="main-video">
-                <source src="https://player.vimeo.com/video/1075331336?h=8134bcdc99&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" type="video/mp4">
-                Dein Browser unterstützt keine Videos.
-            </video>
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="Images/Erik_Bartho_Media_Logo_WeißaNichts_500x500.png" alt="Logo">
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#kontakt">Kontakt</a></li>
-                    <li><a href="impressum.html">Impressum</a></li>
-                </ul>
-            </nav>
-            <div class="hero-content">
-                <h1></h1>
-            </div>
-        </header>
-        
+      
+            
         
         
 
@@ -518,50 +527,36 @@
 
 
 <script>
-    const video = document.getElementById('main-video');
-    const preloader = document.getElementById('preloader');
-    const progressBar = document.getElementById('loader-bar');
-    const progressText = document.getElementById('loader-percentage');
+    document.addEventListener("DOMContentLoaded", () => {
+      const preloader = document.getElementById('preloader');
+      const progressBar = document.getElementById('loader-bar');
+      const progressText = document.getElementById('loader-percentage');
   
-    // Funktion zur Aktualisierung des Fortschritts
-    function updateProgress() {
-      const buffered = video.buffered; // gibt an, welcher Teil des Videos bereits geladen ist
-      if (buffered.length > 0) {
-        const bufferEnd = buffered.end(buffered.length - 1); // Das Ende des geladenen Bereichs
-        const duration = video.duration; // Gesamtzeit des Videos
-        const progress = (bufferEnd / duration) * 100; // Fortschritt in Prozent
+      let progress = 0;
+      const duration = 7000; // 7 Sekunden
+      const intervalTime = duration / 100;
   
-        // Setze den Ladefortschritt
-        progressBar.style.width = `${progress}%`;
-        progressText.textContent = `${Math.floor(progress)}%`;
-        
-        if (progress >= 100) {
-          // Wenn der Puffer vollständig geladen ist, verstecke den Preloader
+      const interval = setInterval(() => {
+        if (progress < 100) {
+          progress += 1;
+          progressBar.style.width = `${progress}%`;
+          progressText.textContent = `${progress}%`;
+        } else {
+          clearInterval(interval);
           setTimeout(() => {
             preloader.style.opacity = '0';
             preloader.style.pointerEvents = 'none';
             setTimeout(() => {
               preloader.style.display = 'none';
             }, 500);
-          }, 500);
+          }, 300);
         }
-      }
-    }
-  
-    // Event-Listener, um den Ladefortschritt zu überwachen
-    video.addEventListener('progress', updateProgress);
-  
-    // Optional: Event-Listener für das "loadeddata"-Event, um sicherzustellen, dass das Video bereits Abspielbar ist
-    video.addEventListener('loadeddata', () => {
-      console.log('Das Video ist zum Abspielen bereit');
+      }, intervalTime);
     });
   </script>
   
   
-  
-  
-  
-  
+</body>
   
   
   
