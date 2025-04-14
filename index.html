@@ -515,56 +515,39 @@
 
 
 <script>
+    // Scroll blockieren während Preloader aktiv ist
+    document.body.style.overflow = "hidden";
+  
     window.addEventListener("load", () => {
       const preloader = document.getElementById("preloader");
-      preloader.style.opacity = "0";
-      setTimeout(() => {
-        preloader.style.display = "none";
-        document.body.style.overflow = "auto";
-      }, 800); // passt zur Transition oben
-    });
+      const progressText = document.getElementById("loader-percentage");
+      const progressBar = document.getElementById("loader-bar");
   
-    // Optional: Seite beim Start kurz blockieren (damit kein Scroll)
-    document.body.style.overflow = "hidden";
-  </script>
+      let progress = 0;
   
-  <script>
-    window.addEventListener("load", function () {
-      const preloader = document.getElementById("preloader");
-      if (preloader) {
-        preloader.style.display = "none";
-      }
-    });
-  </script>
-
-<script>
-    let progress = 0;
-    const progressText = document.getElementById("loader-percentage");
-    const progressBar = document.getElementById("loader-bar");
-    const preloader = document.getElementById("preloader");
-  
-    const simulateLoading = () => {
       const interval = setInterval(() => {
-        progress += Math.random() * 5; // zufälliger Fortschritt
+        progress += Math.random() * 5;
         if (progress >= 100) {
           progress = 100;
           clearInterval(interval);
   
-          // Optional: Fade-Out-Effekt
+          // Fade out preloader
           preloader.style.transition = "opacity 0.5s ease";
           preloader.style.opacity = "0";
+  
+          // Nach dem Ausblenden: ganz entfernen und Scrollen erlauben
           setTimeout(() => {
             preloader.style.display = "none";
+            document.body.style.overflow = "auto";
           }, 500);
         }
   
         progressText.textContent = `${Math.floor(progress)}%`;
         progressBar.style.width = `${progress}%`;
-      }, 50); // alle 50ms
-    };
-  
-    window.addEventListener("load", simulateLoading);
+      }, 50);
+    });
   </script>
+  
   
   
 
