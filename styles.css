@@ -61,12 +61,20 @@
 }
 
 .loader-bar {
-  height: 100%;
-  width: 0;
-  background-color: #ffffff;
-  animation: loadingBar 2s infinite;
-  border-radius: 3px;
-}
+    height: 100%;
+    width: 0;
+    background-color: #d87212;
+    transition: width 0.3s ease;
+    border-radius: 3px;
+  }
+  
+  .loader-percentage {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-family: 'futura', sans-serif;
+  }
 
 @keyframes loadingBar {
   0% { width: 0%; }

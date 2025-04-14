@@ -37,19 +37,19 @@
     
     </head>
     
-<body>
-  <!-- Preloader -->
-<div id="preloader">
-    <div class="loader-bar-container">
-      <div class="loader-percentage" id="loader-percentage">0%</div>
-      <div class="loader-bar" id="loader-bar"></div>
-    </div>
-  </div>
-  
+    <body>
+        <!-- Preloader -->
+        <div id="preloader">
+          <div class="loader-bar-container">
+            <div id="loader-bar" class="loader-bar"></div>
+          </div>
+          <div id="loader-percentage" class="loader-percentage">0%</div>
+        </div>
+      
       
     <header class="hero">
         <video autoplay muted loop class="background-video">
-            <source src="videos/Trailer_Website_V1_hd.mp4" type="video/mp4">
+            <source src="videos/Trailer_Website_V1_hd.mp4"  id="main-video" type="video/mp4"> 
             Dein Browser unterstützt keine Videos.
         </video>
         <nav class="navbar">
@@ -515,38 +515,63 @@
 
 
 <script>
-    // Scroll blockieren während Preloader aktiv ist
-    document.body.style.overflow = "hidden";
+    const video = document.getElementById('main-video');
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.getElementById('loader-bar');
+    const progressText = document.getElementById('loader-percentage');
   
-    window.addEventListener("load", () => {
-      const preloader = document.getElementById("preloader");
-      const progressText = document.getElementById("loader-percentage");
-      const progressBar = document.getElementById("loader-bar");
+    let progress = 0;
+    let interval;
   
-      let progress = 0;
-  
-      const interval = setInterval(() => {
-        progress += Math.random() * 5;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(interval);
-  
-          // Fade out preloader
-          preloader.style.transition = "opacity 0.5s ease";
-          preloader.style.opacity = "0";
-  
-          // Nach dem Ausblenden: ganz entfernen und Scrollen erlauben
-          setTimeout(() => {
-            preloader.style.display = "none";
-            document.body.style.overflow = "auto";
-          }, 500);
+    function simulateProgress() {
+      interval = setInterval(() => {
+        if (progress < 90) {
+          progress += 1;
+          updateProgress(progress);
         }
-  
-        progressText.textContent = `${Math.floor(progress)}%`;
-        progressBar.style.width = `${progress}%`;
       }, 50);
-    });
+    }
+  
+    function updateProgress(value) {
+      progressBar.style.width = `${value}%`;
+      progressText.textContent = `${value}%`;
+    }
+  
+    // Start künstlichen Fortschritt
+    simulateProgress();
+  
+    // Wenn Video genug geladen ist (canplaythrough)
+    video.addEventListener('canplaythrough', () => {
+      clearInterval(interval);
+      progress = 100;
+      updateProgress(progress);
+  
+      // Preloader ausblenden
+      hidePreloader();
+    }); 
+  
+    // Timeout für den Fall, dass das Video zu lange braucht
+    setTimeout(() => {
+      if (progress < 100) {
+        clearInterval(interval);
+        progress = 100;
+        updateProgress(progress);
+        hidePreloader();
+      }
+    }, 5000); // Maximal 5 Sekunden
+  
+    // Funktion zum Ausblenden des Preloaders
+    function hidePreloader() {
+      preloader.style.opacity = '0';
+      preloader.style.pointerEvents = 'none';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
   </script>
+  
+  
+  
   
   
   
