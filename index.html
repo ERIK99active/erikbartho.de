@@ -38,6 +38,15 @@
     </head>
     
 <body>
+  <!-- Preloader -->
+<div id="preloader">
+    <div class="loader-bar-container">
+      <div class="loader-percentage" id="loader-percentage">0%</div>
+      <div class="loader-bar" id="loader-bar"></div>
+    </div>
+  </div>
+  
+      
     <header class="hero">
         <video autoplay muted loop class="background-video">
             <source src="videos/Trailer_Website_V1_hd.mp4" type="video/mp4">
@@ -356,7 +365,7 @@
             if (response.ok) {
               successMessage.textContent = "Danke! Deine Nachricht wurde erfolgreich gesendet.";
               successMessage.style.color = "green";
-              orm.reset();
+              form.reset();
               setTimeout(() => {
                  successMessage.textContent = "";
              }, 5000); // Nachricht nach 5 Sekunden ausblenden
@@ -505,7 +514,58 @@
 </script>
 
 
+<script>
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.style.display = "none";
+        document.body.style.overflow = "auto";
+      }, 800); // passt zur Transition oben
+    });
+  
+    // Optional: Seite beim Start kurz blockieren (damit kein Scroll)
+    document.body.style.overflow = "hidden";
+  </script>
+  
+  <script>
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      if (preloader) {
+        preloader.style.display = "none";
+      }
+    });
+  </script>
 
-
+<script>
+    let progress = 0;
+    const progressText = document.getElementById("loader-percentage");
+    const progressBar = document.getElementById("loader-bar");
+    const preloader = document.getElementById("preloader");
+  
+    const simulateLoading = () => {
+      const interval = setInterval(() => {
+        progress += Math.random() * 5; // zufälliger Fortschritt
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+  
+          // Optional: Fade-Out-Effekt
+          preloader.style.transition = "opacity 0.5s ease";
+          preloader.style.opacity = "0";
+          setTimeout(() => {
+            preloader.style.display = "none";
+          }, 500);
+        }
+  
+        progressText.textContent = `${Math.floor(progress)}%`;
+        progressBar.style.width = `${progress}%`;
+      }, 50); // alle 50ms
+    };
+  
+    window.addEventListener("load", simulateLoading);
+  </script>
+  
+  
 
 </html>
