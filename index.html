@@ -47,25 +47,28 @@
         </div>
       
       
-    <header class="hero">
-        <video autoplay muted loop class="background-video">
-            <source src="videos/Trailer_Website_V1_hd.mp4"  id="main-video" type="video/mp4"> 
-            Dein Browser unterstützt keine Videos.
-        </video>
-        <nav class="navbar">
-            <div class="logo">
                 <img src="Images/Erik_Bartho_Media_Logo_WeißaNichts_500x500.png" alt="Logo">
+        <header class="hero">
+            <video autoplay muted loop class="background-video" preload="auto" id="main-video">
+                <source src="https://player.vimeo.com/video/1075331336?h=8134bcdc99&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" type="video/mp4">
+                Dein Browser unterstützt keine Videos.
+            </video>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="Images/Erik_Bartho_Media_Logo_WeißaNichts_500x500.png" alt="Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                </ul>
+            </nav>
+            <div class="hero-content">
+                <h1></h1>
             </div>
-            <ul class="nav-links">
-                <!-- Dieser Link hat nun auch smooth scroll -->
-                <li><a href="#kontakt">Kontakt</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </nav>
-        <div class="hero-content">
-            <h1></h1>
-        </div>
-    </header>
+        </header>
+        
+        
+        
 
     <section class="intro">
         <h2>Präsentieren Sie Immobilien exklusiv und professionell</h2>
@@ -520,55 +523,42 @@
     const progressBar = document.getElementById('loader-bar');
     const progressText = document.getElementById('loader-percentage');
   
-    let progress = 0;
-    let interval;
+    // Funktion zur Aktualisierung des Fortschritts
+    function updateProgress() {
+      const buffered = video.buffered; // gibt an, welcher Teil des Videos bereits geladen ist
+      if (buffered.length > 0) {
+        const bufferEnd = buffered.end(buffered.length - 1); // Das Ende des geladenen Bereichs
+        const duration = video.duration; // Gesamtzeit des Videos
+        const progress = (bufferEnd / duration) * 100; // Fortschritt in Prozent
   
-    function simulateProgress() {
-      interval = setInterval(() => {
-        if (progress < 90) {
-          progress += 1;
-          updateProgress(progress);
+        // Setze den Ladefortschritt
+        progressBar.style.width = `${progress}%`;
+        progressText.textContent = `${Math.floor(progress)}%`;
+        
+        if (progress >= 100) {
+          // Wenn der Puffer vollständig geladen ist, verstecke den Preloader
+          setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.pointerEvents = 'none';
+            setTimeout(() => {
+              preloader.style.display = 'none';
+            }, 500);
+          }, 500);
         }
-      }, 50);
-    }
-  
-    function updateProgress(value) {
-      progressBar.style.width = `${value}%`;
-      progressText.textContent = `${value}%`;
-    }
-  
-    // Start künstlichen Fortschritt
-    simulateProgress();
-  
-    // Wenn Video genug geladen ist (canplaythrough)
-    video.addEventListener('canplaythrough', () => {
-      clearInterval(interval);
-      progress = 100;
-      updateProgress(progress);
-  
-      // Preloader ausblenden
-      hidePreloader();
-    }); 
-  
-    // Timeout für den Fall, dass das Video zu lange braucht
-    setTimeout(() => {
-      if (progress < 100) {
-        clearInterval(interval);
-        progress = 100;
-        updateProgress(progress);
-        hidePreloader();
       }
-    }, 5000); // Maximal 5 Sekunden
-  
-    // Funktion zum Ausblenden des Preloaders
-    function hidePreloader() {
-      preloader.style.opacity = '0';
-      preloader.style.pointerEvents = 'none';
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 500);
     }
+  
+    // Event-Listener, um den Ladefortschritt zu überwachen
+    video.addEventListener('progress', updateProgress);
+  
+    // Optional: Event-Listener für das "loadeddata"-Event, um sicherzustellen, dass das Video bereits Abspielbar ist
+    video.addEventListener('loadeddata', () => {
+      console.log('Das Video ist zum Abspielen bereit');
+    });
   </script>
+  
+  
+  
   
   
   
