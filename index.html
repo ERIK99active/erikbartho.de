@@ -542,8 +542,11 @@
       const progressBar = document.getElementById('loader-bar');
       const progressText = document.getElementById('loader-percentage');
   
+      // Scrollen blockieren
+      document.body.style.overflow = 'hidden';
+  
       let progress = 0;
-      const duration = 7000; // 7 Sekunden
+      const duration = 7000; // 7 Sekunden fix!
       const intervalTime = duration / 100;
   
       const interval = setInterval(() => {
@@ -553,17 +556,22 @@
           progressText.textContent = `${progress}%`;
         } else {
           clearInterval(interval);
-          setTimeout(() => {
-            preloader.style.opacity = '0';
-            preloader.style.pointerEvents = 'none';
-            setTimeout(() => {
-              preloader.style.display = 'none';
-            }, 500);
-          }, 300);
         }
       }, intervalTime);
+  
+      // Nach genau 7 Sekunden erst alles ausblenden
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        preloader.style.pointerEvents = 'none';
+        document.body.style.overflow = 'auto'; // Scrollen wieder erlauben
+  
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500); // Zeit für fade-out transition
+      }, duration);
     });
   </script>
+  
   
   
 </body>
