@@ -335,12 +335,18 @@ header.hero {
         width: 100% !important;
         margin: 20px 0;
         perspective: none;
+        transform: none !important;
+    }
+
+    .service-card.flipped .service-card-inner {
+        transform: none;
     }
 
     .service-card-inner {
         transform-style: flat !important;
         perspective: none !important;
         transform: none !important;
+        height: auto !important;
     }
 
     .service-card-front {
@@ -349,15 +355,16 @@ header.hero {
 
     .service-card-back {
         position: relative !important;
-        display: flex !important;
         transform: none !important;
         height: auto !important;
         width: 100% !important;
+        margin-bottom: 20px;
     }
 
     .back-container {
         flex-direction: column !important;
         padding: 20px !important;
+        height: auto !important;
     }
 
     .back-container video {
@@ -372,6 +379,8 @@ header.hero {
         width: 100% !important;
         max-width: 100% !important;
         gap: 15px !important;
+        height: auto !important;
+        overflow: visible !important;
     }
 }
 
@@ -516,46 +525,6 @@ header.hero {
 }
 
 /* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-    .service-card {
-        height: auto !important;
-        width: 100% !important;
-        margin: 20px 0;
-    }
-
-    .service-card.flipped {
-        height: auto !important;
-    }
-
-    .service-card-back {
-        height: auto !important;
-        min-height: 100vh;
-        width: 100% !important;
-    }
-
-    .back-container {
-        flex-direction: column !important;
-        padding: 20px !important;
-        gap: 20px;
-    }
-
-    .back-container video {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        margin-bottom: 20px;
-        aspect-ratio: 9/16;
-    }
-
-    .price-columns {
-        width: 100% !important;
-        max-width: 100% !important;
-        gap: 15px !important;
-        overflow-y: visible;
-        overflow-x: hidden;
-    }
-}
-
 @media (min-width: 769px) {
     .service-card {
         width: 900px !important;
