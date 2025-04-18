@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Karussell-Funktionalität
+    // Carousel Functionality
     const carouselInner = document.querySelector('.carousel-inner');
     const carouselItems = document.querySelectorAll('.carousel-item');
     const prevButton = document.querySelector('.carousel-prev');
     const nextButton = document.querySelector('.carousel-next');
     let currentIndex = 0;
-    let isAnimating = false; // Flag zum Verhindern von schnellem Klick
+    let isAnimating = false;
 
     function updateCarousel() {
         if (carouselInner && carouselItems.length > 0) {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isAnimating = true;
             currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselItems.length - 1;
             updateCarousel();
-            setTimeout(() => (isAnimating = false), 500); // Setzt das Flag nach der Animation zurück
+            setTimeout(() => (isAnimating = false), 500);
         }
     }
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isAnimating = true;
             currentIndex = (currentIndex < carouselItems.length - 1) ? currentIndex + 1 : 0;
             updateCarousel();
-            setTimeout(() => (isAnimating = false), 500); // Setzt das Flag nach der Animation zurück
+            setTimeout(() => (isAnimating = false), 500);
         }
     }
 
@@ -36,10 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         nextButton.addEventListener('click', handleNextClick);
     }
 
-
-
-
-    // Galerie-Anzeigen-Funktion
+    // Gallery Toggle Function
     const toggleGalleryButton = document.querySelector('.toggle-gallery');
     if (toggleGalleryButton) {
         toggleGalleryButton.addEventListener('click', function () {
@@ -48,18 +45,48 @@ document.addEventListener('DOMContentLoaded', function () {
                 hiddenImages.forEach((img) => {
                     img.classList.remove('hidden');
                 });
-                this.style.display = 'none'; // Versteckt den Button nach dem Klicken
+                this.style.display = 'none';
             }
         });
     }
 
+    // Service Cards Initialization
+    function initServiceCards() {
+        document.querySelectorAll('.service-card').forEach(card => {
+            const frontVideo = card.querySelector('.service-card-front video');
+            const backVideo = card.querySelector('.service-card-back video');
+            
+            // Auto-play front video
+            if (frontVideo) {
+                frontVideo.play().catch(() => {
+                    // Autoplay failed - this is expected on mobile
+                });
+            }
+            
+            // Handle card flip
+            card.addEventListener('click', function() {
+                this.classList.toggle('flipped');
+                
+                // Handle back video
+                if (backVideo) {
+                    if (this.classList.contains('flipped')) {
+                        backVideo.style.display = 'block';
+                        backVideo.play().catch(() => {
+                            // Autoplay failed
+                        });
+                    } else {
+                        backVideo.pause();
+                        backVideo.currentTime = 0;
+                        backVideo.style.display = 'none';
+                    }
+                }
+            });
+        });
+    }
 
-
-
-    
-    
-    
-
+    // Initialize service cards
+    initServiceCards();
+});
 
 // Video-Playback beim Hover über Service Cards
 document.addEventListener('DOMContentLoaded', () => {
@@ -113,5 +140,42 @@ document.querySelectorAll('.service-card').forEach(card => {
             video.style.display = 'none'; // Video ausblenden
         }
     });
+});
+
+// Service Cards
+function initServiceCards() {
+    document.querySelectorAll('.service-card').forEach(card => {
+        const frontVideo = card.querySelector('.service-card-front video');
+        const backVideo = card.querySelector('.service-card-back video');
+        
+        // Auto-play front video
+        if (frontVideo) {
+            frontVideo.play().catch(() => {
+                // Autoplay failed - this is expected on mobile
+            });
+        }
+        
+        // Handle card flip
+        card.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+            
+            // Handle back video
+            if (backVideo) {
+                if (this.classList.contains('flipped')) {
+                    backVideo.play().catch(() => {
+                        // Autoplay failed
+                    });
+                } else {
+                    backVideo.pause();
+                    backVideo.currentTime = 0;
+                }
+            }
+        });
+    });
+}
+
+// Initialize service cards when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initServiceCards();
 });
 
