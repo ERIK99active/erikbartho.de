@@ -339,6 +339,10 @@ header.hero {
         padding-bottom: 20px;
     }
 
+
+
+
+
     .service-card-inner {
         transform-style: flat !important;
         perspective: none !important;
@@ -367,6 +371,13 @@ header.hero {
         height: auto !important;
         min-height: 0 !important;
         position: static !important;
+
+
+
+
+
+
+
         margin-bottom: 20px;
     }
 
@@ -539,7 +550,7 @@ header.hero {
     .service-card {
         width: 900px !important;
     }
-    
+
     .service-cards {
         display: flex;
         flex-direction: row;
@@ -944,11 +955,11 @@ header.hero {
     .about-me-image::before {
         animation: none;
     }
-    
+
     .about-me-image::after {
         animation: none;
     }
-    
+
     .about-me-text {
         animation: none;
         opacity: 1;
@@ -1141,7 +1152,7 @@ header.hero {
     .contact-form textarea {
         border: 2px solid ButtonText;
     }
-    
+
     .contact-form input[type="submit"] {
         border: 2px solid ButtonText;
         background-color: ButtonFace;
@@ -1199,7 +1210,7 @@ header.hero {
     color: #e2e2d2;
     margin-top: 20px;
     padding: 15px;
-    
+
     margin-left: auto;
     margin-right: auto;
     max-width: 800px; /* Adjust to match your page's width */
@@ -1250,7 +1261,6 @@ footer {
 
     .service-card-back {
         width: auto;
-        height: 650px;
     }
 
     .back-container, .price-columns {
@@ -1272,10 +1282,9 @@ footer {
     }
 
     video.back-video {
-        height: 90%;
-        width: auto;
-        aspect-ratio: 9 / 16;
-        max-width: 45%;
+        height: auto;
+        max-height: 90%;
+        max-width: 50%;
         object-fit: cover;
     }
 
@@ -1290,10 +1299,10 @@ footer {
         padding: 20px;
     }
     .service-card-inner {
-        height: 650px;
+        height: 600px;
     }
     .price-columns {
-        max-height: 620px;
+        max-height: 690px;
     }
     .price-columns {
         border-top-left-radius: 15px;
@@ -1540,19 +1549,19 @@ footer {
   --primary-color: #d87212;
   --text-color: #e2e2d2;
   --bg-color: #06141B;
-  
+
   /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
-  
+
   /* Typography */
   --font-size-base: 16px;
   --font-size-h1: clamp(2rem, 5vw, 3.5rem);
   --font-size-h2: clamp(1.5rem, 4vw, 2.5rem);
-  
+
   /* Container */
   --container-padding: clamp(20px, 5vw, 50px);
   --container-max-width: 1200px;
@@ -1584,7 +1593,7 @@ footer {
     padding: 50px 20px;
     background-color: none;
     margin-bottom: 180px
-    
+
 }
 .extra-services h2 {
     font-size: 28px;
@@ -1866,5 +1875,4 @@ footer {
         padding: 20px 15px;
     }
 }
-
 
