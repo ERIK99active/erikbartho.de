@@ -347,7 +347,7 @@ header.hero {
         transform-style: flat !important;
         perspective: none !important;
         transform: none !important;
-        height: auto !important;
+        height: 700px;
 
     }
 
@@ -1296,7 +1296,7 @@ footer {
         height: 700px;
     }
     .price-columns {
-        max-height: 690px;
+        max-height: 790px;
     }
     .price-columns {
         border-top-left-radius: 15px;
