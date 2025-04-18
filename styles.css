@@ -424,9 +424,17 @@ header.hero {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .services {
+        min-height: auto;
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .services h2 {
+        margin-bottom: 20px;
+    }
+
     .service-card {
-        width: 100%;
-        height: auto;
         margin: 20px 0;
     }
 
@@ -647,6 +655,21 @@ header.hero {
     .process-container {
         flex-direction: column;
         align-items: center;
+        margin-top: 40px;  /* Add space above process section */
+    }
+
+    .process-section {
+        padding: 40px 20px;
+        margin-top: 40px;  /* Add space above process section */
+        clear: both;       /* Ensure it starts after floating elements */
+    }
+
+    .service-card-back {
+        margin-bottom: 0;  /* Remove bottom margin from service card back */
+    }
+
+    .process-step {
+        margin-bottom: 30px;  /* Add space between process steps */
     }
 
     .hero-content h1 {
@@ -1217,6 +1240,32 @@ footer {
     .services {
         padding-left: max(20px, env(safe-area-inset-left));
         padding-right: max(20px, env(safe-area-inset-right));
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 20px;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 8px;
+        font-size: 16px;  /* Prevent zoom on iOS */
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
     }
 }
 
