@@ -350,8 +350,12 @@
         const progressBar = document.getElementById('loader-bar');
         const progressText = document.getElementById('loader-percentage');
         
-        // Block scrolling during preloader
+        // Enhanced scroll blocking for all devices
+        document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.height = '100%';
         
         // Progress animation setup
         let progress = 0;
@@ -373,7 +377,13 @@
         setTimeout(() => {
             preloader.style.opacity = '0';
             preloader.style.pointerEvents = 'none';
+            
+            // Reset scroll blocking
+            document.documentElement.style.overflow = '';
             document.body.style.overflow = 'auto';
+            document.body.style.position = '';
+            document.body.style.width = '';
+            document.body.style.height = '';
             
             setTimeout(() => {
                 preloader.style.display = 'none';
