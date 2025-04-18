@@ -52,39 +52,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Service Cards Initialization
     function initServiceCards() {
-        document.querySelectorAll('.service-card').forEach(card => {
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
             const frontVideo = card.querySelector('.service-card-front video');
             const backVideo = card.querySelector('.service-card-back video');
             
-            // Auto-play front video
+            // Set front video to autoplay
             if (frontVideo) {
-                frontVideo.play().catch(() => {
-                    // Autoplay failed - this is expected on mobile
+                frontVideo.play().catch(function(error) {
+                    console.log("Video autoplay failed:", error);
                 });
             }
             
-            // Handle card flip
             card.addEventListener('click', function() {
+                // Toggle the flipped class on the service card
                 this.classList.toggle('flipped');
                 
-                // Handle back video
+                // Handle back video playback
                 if (backVideo) {
                     if (this.classList.contains('flipped')) {
-                        backVideo.style.display = 'block';
-                        backVideo.play().catch(() => {
-                            // Autoplay failed
+                        backVideo.currentTime = 0;
+                        backVideo.play().catch(function(error) {
+                            console.log("Back video playback failed:", error);
                         });
                     } else {
                         backVideo.pause();
-                        backVideo.currentTime = 0;
-                        backVideo.style.display = 'none';
                     }
                 }
             });
         });
     }
 
-    // Initialize service cards
+    // Initialize service cards when the DOM is loaded
     initServiceCards();
 });
 
@@ -140,42 +140,5 @@ document.querySelectorAll('.service-card').forEach(card => {
             video.style.display = 'none'; // Video ausblenden
         }
     });
-});
-
-// Service Cards
-function initServiceCards() {
-    document.querySelectorAll('.service-card').forEach(card => {
-        const frontVideo = card.querySelector('.service-card-front video');
-        const backVideo = card.querySelector('.service-card-back video');
-        
-        // Auto-play front video
-        if (frontVideo) {
-            frontVideo.play().catch(() => {
-                // Autoplay failed - this is expected on mobile
-            });
-        }
-        
-        // Handle card flip
-        card.addEventListener('click', function() {
-            this.classList.toggle('flipped');
-            
-            // Handle back video
-            if (backVideo) {
-                if (this.classList.contains('flipped')) {
-                    backVideo.play().catch(() => {
-                        // Autoplay failed
-                    });
-                } else {
-                    backVideo.pause();
-                    backVideo.currentTime = 0;
-                }
-            }
-        });
-    });
-}
-
-// Initialize service cards when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initServiceCards();
 });
 
