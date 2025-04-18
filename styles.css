@@ -337,36 +337,41 @@ header.hero {
         perspective: none;
     }
 
-    .service-card.flipped {
-        height: auto !important;
-    }
-
     .service-card-inner {
         transform-style: flat !important;
         perspective: none !important;
-    }
-
-    .service-card.flipped .service-card-inner {
         transform: none !important;
     }
 
-    .service-card-front,
-    .service-card-back {
-        position: relative !important;
-        backface-visibility: visible !important;
-        transform: none !important;
+    .service-card-front {
+        display: none !important;
     }
 
     .service-card-back {
-        display: none;
+        position: relative !important;
+        display: flex !important;
+        transform: none !important;
+        height: auto !important;
+        width: 100% !important;
     }
 
-    .service-card.flipped .service-card-front {
-        display: none;
+    .back-container {
+        flex-direction: column !important;
+        padding: 20px !important;
     }
 
-    .service-card.flipped .service-card-back {
-        display: flex;
+    .back-container video {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16/9;
+        margin-bottom: 20px;
+    }
+
+    .price-columns {
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 15px !important;
     }
 }
 
