@@ -336,7 +336,7 @@ header.hero {
         margin: 20px 0;
         perspective: none;
         transform: none !important;
-        padding-bottom: 20px;
+
     }
 
     .service-card.flipped .service-card-inner {
@@ -348,7 +348,7 @@ header.hero {
         perspective: none !important;
         transform: none !important;
         height: auto !important;
-        position: static !important;
+
     }
 
     .service-card-front {
@@ -356,20 +356,20 @@ header.hero {
     }
 
     .service-card-back {
-        position: static !important;
+        position: relative !important;
         transform: none !important;
         height: auto !important;
         width: 100% !important;
         margin-bottom: 20px;
-        min-height: 0 !important;
+
     }
 
     .back-container {
         flex-direction: column !important;
         padding: 20px !important;
         height: auto !important;
-        min-height: 0 !important;
-        position: static !important;
+
+
     }
 
     .back-container video {
@@ -386,16 +386,16 @@ header.hero {
         gap: 15px !important;
         height: auto !important;
         overflow: visible !important;
-        position: static !important;
-        padding-bottom: 20px;
-    }
 
-    .price-columns div {
-        margin-bottom: 15px;
-    }
 
-    .price-columns div:last-child {
-        margin-bottom: 0;
+
+
+
+
+
+
+
+
     }
 }
 
