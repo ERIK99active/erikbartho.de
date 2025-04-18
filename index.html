@@ -4,17 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        
-        
-      <script>
-            // Verhindert, dass der Browser beim Neuladen die Scrollposition speichert
-            if ('scrollRestoration' in history) {
-                history.scrollRestoration = 'manual';
-            }
-            window.addEventListener('load', function() {
-                window.scrollTo(0, 0);
-            });
-        </script>
-    
+        <!-- Meta-->
         <title>Immobilienvideos & Social Media Content | Erik Bartho</title>
         <meta name="description" content="Hochwertige Immobilien-Videos und Social Media Content für Makler und Eigentümer in Süddeutschland. Jetzt kostenlos beraten lassen!">
         <link rel="stylesheet" href="styles.css">
@@ -43,8 +33,7 @@
         <link rel="icon" type="image/png" sizes="512x512" href="/icons/erik_bartho_android_chrome_512x512.png">
     
         <!-- Safari Pinned Tab -->
-        <link rel="mask-icon" href="/icons/erik_bartho_pinned_tab_safari.svg" >
-    
+        <link rel="mask-icon" href="/icons/erik_bartho_pinned_tab_safari.svg" >    
     </head>
     
 <!-- Preloader -->
@@ -67,6 +56,7 @@
       ></iframe>
     </div>
   
+     <!-- Nav -->
     <nav class="navbar">
       <div class="logo">
         <img src="Images/Erik_Bartho_Media_Logo_WeißaNichts_500x500.png" alt="Logo" />
@@ -76,40 +66,34 @@
         <li><a href="impressum.html">Impressum</a></li>
       </ul>
     </nav>
-  
+
+     <!-- Hero Section -->
     <div class="hero-content">
       <h1>Immobilienvideos &<br class="mobile-break"> Fotografie für<br class="mobile-break"> Makler in<br class="mobile-break"> Süddeutschland</h1>
     </div>
   </header>
   
-      
-      
-      
-            
-        
-        
-
-    <section class="intro">
+      <!-- Intro Section -->
+  <section class="intro">
         <h2>Präsentieren Sie Immobilien exklusiv und professionell - mit eindrucksvollen Videos für Website & Social Media</h2>
         <p>Als Makler oder Eigentümer zeigen Sie Ihr Objekt in geführten Rundgängen, hochwertig inszeniert mit modernster Technik und einem Auge fürs Detail. Immobilienvideos, die Emotionen wecken – für mehr Sichtbarkeit und überzeugte Käufer im Raum Süddeutschland.</p>
         <!-- Der CTA-Button verweist ebenfalls auf #kontakt -->
         <a href="#kontakt" class="cta-button">Unverbindliche Beratung</a>
     </section>
-   
+
+    <!-- Services Section -->
     <section class="services">
         <h2>Aktuelle Leistungen</h2>
         <div class="card-container">
             <div class="service-card" onclick="toggleCard(this)">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <div class="front-wrapper">
-                            <video muted loop autoplay>
-                                <source src="videos/Website_Service_Card_1_Video_Loop_HD.mp4" type="video/mp4">
-                                Ihr Browser unterstützt keine Videos.
-                            </video>
-                        </div>
+                        <video muted loop autoplay>
+                            <source src="videos/Website_Service_Card_1_Video_Loop_HD.mp4" type="video/mp4">
+                            Ihr Browser unterstützt keine Videos.
+                        </video>
                         <h3>Social Media für Immobilien – Aufmerksamkeit, die verkauft</h3>
-                        <p>Professionelle Videos, die Ihre Objekte ins beste Licht rücken.</p>
+                        <p>Professionelle Videos und Fotos, die Ihre Immobilien perfekt in Szene setzen.</p>
                     </div>
                     <div class="service-card-back">
                         <div class="back-container">
@@ -118,32 +102,34 @@
                                 Ihr Browser unterstützt keine Videos.
                             </video>
                             <div class="price-columns">
-                                <div>
-                                    <strong>Basis-Paket – Perfekt für kleinere Objekte <br>349 €</strong>
+                                <div id="basic-package">
+                                    <strong>Basis-Paket – Perfekt für kleinere Objekte | 349 €</strong>
                                     <ul>
-                                        <li>30-sekündiges Instagram Reel</li>
-                                        <li>Ideal für Wohnungen oder kleinere Immobilien</li>
-                                        <li>Grundlegender Schnitt mit Musik & Farbkorrektur</li>
-                                        <li>Branding-Anpassung für einen einheitlichen Look</li>
+                                        <li>30-sek. Instagram/TikTok Video mit Profi-Bearbeitung</li>
+                                        <li>Hochwertige Innenaufnahmen (5 Räume) mit Lichtsetzung</li>
+                                        <li>Maßgeschneidertes Musik- & Sounddesign</li>
+                                        <li>2 Revisionsrunden für Ihre Anpassungswünsche</li>
+                                        <li>Express-Lieferung in 3 Werktagen</li>
                                     </ul>
                                 </div>
-                                <div>
-                                    <strong>Premium-Paket – Mehr Details, mehr Wirkung <br>599 €</strong>
+                                <div class="premium-package">
+                                    <strong>Premium-Paket – Mehr Details, mehr Wirkung | 599 €</strong>
                                     <ul>
-                                        <li>60-sekündiges Instagram Reel mit Drohnenaufnahmen</li>
-                                        <li>Ideal für Häuser und größere Objekte</li>
-                                        <li>Zusätzliche Innenraum-Details für mehr Atmosphäre</li>
-                                        <li>Erweiterte Bearbeitung mit Farbkorrektur & Branding</li>
-                                        <li>Optimiert für Social Media & Webseiten</li>
+                                        <li>60-sek. Video mit beeindruckenden Drohnenaufnahmen</li>
+                                        <li>Umfassende Innen- und Außenaufnahmen (10 Räume)</li>
+                                        <li>Premium Farbkorrektur für perfekte Bildästhetik</li>
+                                        <li>Exklusives Sounddesign mit lizenzfreier Musik</li>
+                                        <li>Social Media Optimierung mit Hashtag-Strategie</li>
                                     </ul>
                                 </div>
-                                <div>
-                                    <strong>Deluxe-Paket – Präsentation für Immobilien <br>999 €</strong>
+                                <div id="deluxe-package">
+                                    <strong>Deluxe-Paket – Die komplette Immobilien-Story | 999 €</strong>
                                     <ul>
-                                        <li>90-sekündiges Immobilien-Tour-Video</li>
-                                        <li>Optimal für Villen oder Luxus-Immobilien</li>
-                                        <li>Geführte Besichtigung mit Makler für persönliche Ansprache</li>
-                                        <li>Professionelle Inszenierung für maximale Wirkung</li>
+                                        <li>90-sek. cineastische Tour mit Sonnenauf-/untergang</li>
+                                        <li>Geführte Besichtigung mit professioneller Moderation</li>
+                                        <li>Exklusive Luftaufnahmen mit dynamischen Kamerafahrten</li>
+                                        <li>Individuelles Sounddesign mit Musikkomposition</li>
+                                        <li>Komplette Social Media Strategie für maximale Conversion</li>
                                     </ul>
                                 </div>
                             </div>
@@ -151,25 +137,10 @@
                     </div>
                 </div>
             </div>
-    
-            <!-- Weitere Kacheln falls notwendig -->
         </div>
     </section>
     
-    
-    <script>
-        function toggleCard(card) {
-            card.classList.toggle('flipped');
-            const video = card.querySelector('.back-video');
-            if (card.classList.contains('flipped')) {
-                video.play();
-            } else {
-                video.pause();
-                video.currentTime = 0;
-            }
-        }
-    </script>
-
+    <!-- Extra Services Section -->
 <section class="extra-services">
     <h2>Zusätzliche Leistungen</h2>
     <div class="services-container">
@@ -186,55 +157,7 @@
     </div>
 </section>
 
-<style>
-    .extra-services {
-        text-align: center;
-        padding: 50px 20px;
-        background-color: none;
-        margin-bottom: 180px
-        
-    }
-    .extra-services h2 {
-        font-size: 28px;
-        margin-bottom: 70px;
-    }
-    .services-container {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-    }
-    .service-box {
-        background: #e2e2d2;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 300px;
-        text-align: center;
-        box-shadow:  0px 0px 11px #e2e2d2,
-        0px 0px 2px #e2e2d2;
-    }
-    .service-box img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 1px;
-        margin-top: 8px;
-    }
-    .service-box h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-        color: #0a233d;
-    }
-    .service-box p {
-        font-size: 14px;
-        color: #0a233d;
-
-
-    }
-</style>
-
-
-
+    <!-- Process Section -->
     <section class="process-section">
         <h2>Prozess</h2>
         <div class="process-container">
@@ -277,50 +200,7 @@
         </div>
     </section>
 
-    <script>
-        // Custom smooth scrolling function with adjustable speed
-        function smoothScroll(targetId, duration) {
-            var target = document.getElementById(targetId);
-            if (!target) return;
-            // Berechnung, um das Element mittig im Viewport zu platzieren
-            var targetRect = target.getBoundingClientRect();
-            var targetCenter = targetRect.top + window.pageYOffset + targetRect.height / 2;
-            var targetPosition = targetCenter - window.innerHeight / 2;
-            var startPosition = window.pageYOffset;
-            var distance = targetPosition - startPosition;
-            var startTime = null;
-
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                var timeElapsed = currentTime - startTime;
-                var run = ease(timeElapsed, startPosition, distance, duration);
-                window.scrollTo(0, run);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            }
-
-            // easeInOutQuad für sanfte Animation
-            function ease(t, b, c, d) {
-                t /= d/2;
-                if (t < 1) return c/2*t*t + b;
-                t--;
-                return -c/2 * (t*(t-2) - 1) + b;
-            }
-
-            requestAnimationFrame(animation);
-        }
-
-        // Smooth scrolling für alle Links, die auf "#kontakt" verweisen
-        document.querySelectorAll('a[href="#kontakt"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Passe hier die Dauer (in ms) an, um die Scrollgeschwindigkeit zu ändern
-                var scrollDuration = 1500; // 1500ms = 1,5 Sekunden
-                smoothScroll('kontakt', scrollDuration);
-            });
-        });
-    </script>
-</body>
-
+<!-- About Me Section -->
 <section class="about-me">
     <div class="about-me-container">
         <div class="about-me-image">
@@ -335,6 +215,7 @@
     </div>
 </section>
 
+<!-- Partner Logos Section -->
 <section class="partner-logos">
     <h2>Unsere Partner</h2>
     <div class="logo-container">
@@ -346,6 +227,7 @@
     </div>
   </section>
 
+  <!-- Contact Form Section -->
   <div class="contact-form" id="kontakt">
     <h2>Kontaktformular</h2>
   
@@ -366,49 +248,10 @@
     </form>
   
     <p id="successMessage"></p>
-  
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("contactForm").addEventListener("submit", function (event) {
-          event.preventDefault();
-  
-          const form = this;
-          const formData = new FormData(form);
-          const successMessage = document.getElementById("successMessage");
-  
-          fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          })
-          .then(response => {
-            if (response.ok) {
-              successMessage.textContent = "Danke! Deine Nachricht wurde erfolgreich gesendet.";
-              successMessage.style.color = "green";
-              form.reset();
-              setTimeout(() => {
-                 successMessage.textContent = "";
-             }, 5000); // Nachricht nach 5 Sekunden ausblenden
-            } else {
-              return response.json().then(data => {
-                throw new Error(data.error || "Ein Fehler ist aufgetreten.");
-              });
-            }
-          })
-          .catch(error => {
-            successMessage.textContent = error.message;
-            successMessage.style.color = "red";
-          });
-        });
-      });
-    </script>
   </div>
-  
-
 </div>
 
+<!-- Gallery Section -->
 <section class="gallery-section">
     <h2>Galerie</h2>
     <div class="gallery">
@@ -439,9 +282,7 @@
     </div>
 </section>
 
-
-
-
+<!-- Footer Section -->
 <footer class="site-footer">
     <hr>
     <!-- Das Logo als klickbarer Link -->
@@ -457,69 +298,38 @@
     </div>
 </footer>
 
-<style>
-    .site-footer {
-        background-color: none; 
-        color: #e2e2d2;
-        padding: 20px 0;
-        text-align: center;
-        font-size: 14px;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-    .site-footer hr {
-        border: none;
-        height: 2px;
-        background-color: #e2e2d2;
-        width: calc(100% - 40px); /* 20px Abstand links und rechts */
-        margin: 0 auto 15px auto;
-    }
-    .footer-logo {
-        width: 80px;  /* Passe die Größe nach Bedarf an */
-        height: auto;
-        margin-bottom: 15px;
-	    margin-top: 30px;
-        transition: transform 0.3s ease; /* Sanfter Übergang */
-    }
-    .footer-logo:hover {
-        transform: scale(1.08); /* Leichtes Vergrößern beim Hover */
-    }
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-    }
-    .footer-nav {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-    }
-    .footer-nav a {
-        color: #e2e2d2;
-        text-decoration: none;
-    }
-    .footer-nav a:hover {
-        text-decoration: underline;
-    }
-</style>
-
+<!-- script section -->                            
 <script>
-    document.querySelector('.scroll-to-top').addEventListener('click', function(e) {
+    // ===== PAGE INITIALIZATION =====
+    document.addEventListener("DOMContentLoaded", () => {
+        initPreloader();
+        initContactForm();
+        initSmoothScrolling();
+        initServiceCards();
+    });
+
+    // ===== SCROLL CONTROL =====
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    window.addEventListener('load', () => window.scrollTo(0, 0));
+
+    // Smooth scroll to top when footer logo is clicked
+    document.querySelector('.scroll-to-top').addEventListener('click', (e) => {
         e.preventDefault();
-        smoothScrollToTop(1500); // Dauer in ms, hier 1,5 Sekunden
+        smoothScrollToTop(1500);
     });
     
     function smoothScrollToTop(duration) {
-        var startPosition = window.pageYOffset;
-        var distance = startPosition; // da wir bis 0 scrollen möchten
-        var startTime = null;
+        const startPosition = window.pageYOffset;
+        const distance = startPosition;
+        let startTime = null;
         
         function animation(currentTime) {
             if (startTime === null) startTime = currentTime;
-            var timeElapsed = currentTime - startTime;
-            var run = ease(timeElapsed, startPosition, -distance, duration);
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, -distance, duration);
             window.scrollTo(0, run);
             if (timeElapsed < duration) requestAnimationFrame(animation);
         }
@@ -533,50 +343,134 @@
         
         requestAnimationFrame(animation);
     }
-</script>
 
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const preloader = document.getElementById('preloader');
-      const progressBar = document.getElementById('loader-bar');
-      const progressText = document.getElementById('loader-percentage');
-  
-      // Scrollen blockieren
-      document.body.style.overflow = 'hidden';
-  
-      let progress = 0;
-      const duration = 7000; // 7 Sekunden fix!
-      const intervalTime = duration / 100;
-  
-      const interval = setInterval(() => {
-        if (progress < 100) {
-          progress += 1;
-          progressBar.style.width = `${progress}%`;
-          progressText.textContent = `${progress}%`;
-        } else {
-          clearInterval(interval);
-        }
-      }, intervalTime);
-  
-      // Nach genau 7 Sekunden erst alles ausblenden
-      setTimeout(() => {
-        preloader.style.opacity = '0';
-        preloader.style.pointerEvents = 'none';
-        document.body.style.overflow = 'auto'; // Scrollen wieder erlauben
-  
+    // ===== PRELOADER =====
+    function initPreloader() {
+        const preloader = document.getElementById('preloader');
+        const progressBar = document.getElementById('loader-bar');
+        const progressText = document.getElementById('loader-percentage');
+        
+        // Block scrolling during preloader
+        document.body.style.overflow = 'hidden';
+        
+        // Progress animation setup
+        let progress = 0;
+        const duration = 7000;
+        const intervalTime = duration / 100;
+        
+        // Increment progress bar
+        const interval = setInterval(() => {
+            if (progress < 100) {
+                progress += 1;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${progress}%`;
+            } else {
+                clearInterval(interval);
+            }
+        }, intervalTime);
+        
+        // Hide preloader after duration
         setTimeout(() => {
-          preloader.style.display = 'none';
-        }, 500); // Zeit für fade-out transition
-      }, duration);
-    });
-  </script>
-  
-  
-  
-</body>
-  
-  
-  
+            preloader.style.opacity = '0';
+            preloader.style.pointerEvents = 'none';
+            document.body.style.overflow = 'auto';
+            
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }, duration);
+    }
 
+    // ===== CONTACT FORM =====
+    function initContactForm() {
+        const form = document.getElementById("contactForm");
+        const successMessage = document.getElementById("successMessage");
+        
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    successMessage.textContent = "Danke! Deine Nachricht wurde erfolgreich gesendet.";
+                    successMessage.style.color = "green";
+                    form.reset();
+                    setTimeout(() => successMessage.textContent = "", 5000);
+                } else {
+                    const data = await response.json();
+                    throw new Error(data.error || "Ein Fehler ist aufgetreten.");
+                }
+            } catch (error) {
+                successMessage.textContent = error.message;
+                successMessage.style.color = "red";
+            }
+        });
+    }
+
+    // ===== SMOOTH SCROLLING =====
+    function initSmoothScrolling() {
+        document.querySelectorAll('a[href="#kontakt"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                smoothScroll('kontakt', 1500);
+            });
+        });
+    }
+    
+    function smoothScroll(targetId, duration) {
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        
+        const targetRect = target.getBoundingClientRect();
+        const targetCenter = targetRect.top + window.pageYOffset + targetRect.height / 2;
+        const targetPosition = targetCenter - window.innerHeight / 2;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+            t /= d/2;
+            if (t < 1) return c/2*t*t + b;
+            t--;
+            return -c/2 * (t*(t-2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    }
+
+    // ===== SERVICE CARDS =====
+    function initServiceCards() {
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                toggleCard(this);
+            });
+        });
+    }
+
+    function toggleCard(card) {
+        card.classList.toggle('flipped');
+        const video = card.querySelector('.back-video');
+        if (card.classList.contains('flipped')) {
+            video.play();
+        } else {
+            video.pause();
+            video.currentTime = 0;
+        }
+    }
+</script>  
+</body>
 </html>
