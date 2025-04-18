@@ -357,6 +357,15 @@
         document.body.style.width = '100%';
         document.body.style.height = '100%';
         
+        // Ensure preloader covers the entire viewport with correct background
+        preloader.style.position = 'fixed';
+        preloader.style.top = '0';
+        preloader.style.left = '0';
+        preloader.style.width = '100%';
+        preloader.style.height = '100%';
+        preloader.style.backgroundColor = '#06141B'; // oder die gewünschte Farbe
+        preloader.style.zIndex = '9999';
+        
         // Progress animation setup
         let progress = 0;
         const duration = 7000;
