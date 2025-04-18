@@ -1230,11 +1230,18 @@ footer {
     }
 
     .service-card {
-        /*border: 5px solid red;*/
+        height: auto !important;
+        margin-bottom: 40px;
+    }
+
+    .service-card-inner {
+        height: auto !important;
+        min-height: 600px;
     }
 
     .service-card-front {
         padding: 0;
+        height: auto !important;
     }
 
     .service-card .service-card-front video {
@@ -1246,56 +1253,26 @@ footer {
 
     .services {
         display: block;
+        padding-bottom: 40px;
     }
 
     .service-card-back {
         width: auto;
-    }
-
-    .back-container, .price-columns {
-        gap: 10px;
+        height: auto !important;
+        min-height: 600px;
     }
 
     .back-container {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        width: 100%;
-        height: 100%;
-        align-items: stretch;
-        justify-content: space-between;
-        padding: 0;
-        box-sizing: border-box;
-        overflow: hidden;
+        height: auto !important;
+        min-height: 580px;
         padding: 15px;
-    }
-
-    video.back-video {
-        height: auto;
-        max-height: 90%;
-        max-width: 50%;
-        object-fit: cover;
-    }
-
-    .price-columns {
-        width: 45%;
-        max-width: 500px;
         overflow-y: auto;
-        overflow-x: hidden;
     }
 
-    .front-wrapper {
-        padding: 20px;
-    }
-    .service-card-inner {
-        height: 600px;
-    }
     .price-columns {
-        max-height: 690px;
-    }
-    .price-columns {
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
+        max-height: none !important;
+        overflow-y: visible;
+        padding-bottom: 20px;
     }
 }
 @media (min-width:900px) {
