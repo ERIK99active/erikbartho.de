@@ -160,32 +160,26 @@ body {   /* Einheitliche Hintergrundfarbe */
 header.hero {
     position: relative;
     height: 100vh;
-    overflow: hidden;
-  }
-  
-  .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
   
-  .video-container {
+.video-container {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100vw;
-    height: 56.25vw; /* 16:9 Verhältnis */
+    height: 56.25vw;
     min-height: 100vh;
-    min-width: 177.77vh; /* 16:9 Verhältnis umgekehrt */
+    min-width: 177.77vh;
     transform: translate(-50%, -50%);
     z-index: -1;
     overflow: hidden;
-  }
+}
   
-  .video-container iframe {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -193,7 +187,7 @@ header.hero {
     height: 100%;
     border: none;
     pointer-events: none;
-  }
+}
   
   
   /* Navigation */
@@ -201,53 +195,69 @@ header.hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: var(--container-padding);
     position: relative;
-    z-index: 1;
-  }
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+}
   
   .logo img {
-    height: 35px;
+    height: clamp(28px, 4vw, 35px);
     width: auto;
-  }
+    transition: transform 0.3s ease;
+}
+  
+  .logo img:hover {
+    transform: scale(1.05);
+}
   
   .nav-links {
     list-style-type: none;
     display: flex;
-    gap: 20px;
-  }
+    gap: clamp(15px, 3vw, 30px);
+    margin: 0;
+    padding: 0;
+}
   
   .nav-links li a {
-    color: #e2e2d2;
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 16px;
-  }
+    font-size: clamp(14px, 2vw, 16px);
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+  
+  .nav-links li a:hover {
+    color: var(--primary-color);
+}
   
   /* Hero-Text */
   .hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    text-align: center;
-    z-index: 1;
-    height: 100vh; /* oder passend zu deinem Layout */
     width: 100%;
-  }
+    padding: 0 var(--container-padding);
+    box-sizing: border-box;
+}
   
   .hero-content h1 {
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     font-size: clamp(24px, 5vw, 40px);
     font-weight: bold;
     letter-spacing: clamp(2px, 0.5vw, 4px);
-    color: white;
+    color: var(--text-color);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    padding: 0 20px;
     text-align: center;
-    width: 100%;
-    box-sizing: border-box;
     line-height: 1.4;
-  }
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(20%);
+}
   
 
 
@@ -1235,11 +1245,10 @@ footer {
 
 /* Safe Area Insets for Modern Mobile Devices */
 @supports (padding: max(0px)) {
-    .hero-content,
-    .intro,
-    .services {
-        padding-left: max(20px, env(safe-area-inset-left));
-        padding-right: max(20px, env(safe-area-inset-right));
+    .navbar,
+    .hero-content {
+        padding-left: max(var(--container-padding), env(safe-area-inset-left));
+        padding-right: max(var(--container-padding), env(safe-area-inset-right));
     }
 }
 
@@ -1267,6 +1276,47 @@ footer {
         padding: 12px;
         margin-top: 10px;
     }
+}
+
+/* Base styles (Mobile First) */
+:root {
+  /* Colors */
+  --primary-color: #d87212;
+  --text-color: #e2e2d2;
+  --bg-color: #06141B;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  
+  /* Typography */
+  --font-size-base: 16px;
+  --font-size-h1: clamp(2rem, 5vw, 3.5rem);
+  --font-size-h2: clamp(1.5rem, 4vw, 2.5rem);
+  
+  /* Container */
+  --container-padding: clamp(20px, 5vw, 50px);
+  --container-max-width: 1200px;
+}
+
+/* Mobile Base Layout */
+.container {
+  width: 100%;
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+  /* Tablet styles */
+}
+
+@media (min-width: 1024px) {
+  /* Desktop styles */
 }
 
 
