@@ -53,6 +53,10 @@
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        sandbox="allow-scripts allow-same-origin allow-presentation"
+        title="Immobilien Video Präsentation"
       ></iframe>
     </div>
   
@@ -223,7 +227,10 @@
       <img src="Images/CCI-Logo_rgb_GmbH-Co-1.png" alt="CCI-vK" class="logo">
       <img src="Images/Sandberg_Estates_Logo_Weiß.png" alt="Sandberg Estates" class="logo">
       <img src="Images/B_S_Technic_Logo.png" alt="B-S-Technic Logo" class="logo">
-      <img src="Images/2021_Logo_white_distance.png" alt="99active" class="logo">
+      <div class="logo-wrapper">
+        <img src="Images/2021_Logo_white_distance.png" alt="99active" class="logo">
+        <span class="logo-text">99active.com</span>
+      </div>
     </div>
   </section>
 
@@ -233,16 +240,16 @@
   
     <form id="contactForm" method="POST" action="https://formspree.io/f/mqapwgqy">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Dein Name" required>
+      <input type="text" id="name" name="name" placeholder="Dein Name" required autocomplete="name">
   
       <label for="email">E-Mail:</label>
-      <input type="email" id="email" name="_replyto" placeholder="Deine E-Mail" required>
+      <input type="email" id="email" name="_replyto" placeholder="Deine E-Mail" required autocomplete="email">
   
       <label for="subject">Betreff:</label>
-      <input type="text" id="subject" name="subject" placeholder="Betreff" required>
+      <input type="text" id="subject" name="subject" placeholder="Betreff" required autocomplete="off">
   
       <label for="message">Nachricht:</label>
-      <textarea id="message" name="message" rows="6" placeholder="Deine Nachricht" required></textarea>
+      <textarea id="message" name="message" rows="6" placeholder="Deine Nachricht" required autocomplete="off"></textarea>
   
       <input type="submit" value="Senden">
     </form>

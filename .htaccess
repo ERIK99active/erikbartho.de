@@ -1,0 +1,29 @@
+# Security Headers
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "interest-cohort=()"
+
+# CORS Headers for specific domains
+<FilesMatch "\.(jpg|jpeg|png|gif|js|css)$">
+    Header set Access-Control-Allow-Origin "https://erikbartho.de"
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+</FilesMatch>
+
+# Cookie Security
+Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure;SameSite=Lax
+
+# Enable HSTS (uncomment if you have HTTPS)
+# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect against common vulnerabilities
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+    RewriteRule .* - [F]
+</IfModule> 
