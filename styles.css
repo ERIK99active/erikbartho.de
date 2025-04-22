@@ -1504,12 +1504,12 @@ footer {
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
     .service-card-front {
-        background-color: #1a1a1a;
+        background-color: #e2e2d2;
     }
 
     .service-card-front h3,
     .service-card-front p {
-        color: #e2e2d2;
+        color: 06141B;
     }
 }
 
