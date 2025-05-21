@@ -10,24 +10,22 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(
-        350deg,
-        hsl(200deg 64% 6%) 8%,
-        hsl(200deg 64% 6%) 23%,
-        hsl(200deg 64% 6%) 32%,
-        hsl(200deg 64% 6%) 39%,
-        hsl(200deg 64% 6%) 45%,
-        hsl(201deg 62% 7%) 50%,
-        hsl(203deg 57% 10%) 55%,
-        hsl(205deg 53% 14%) 60%,
-        hsl(208deg 48% 17%) 64%,
-        hsl(210deg 44% 20%) 68%,
-        hsl(210deg 44% 20%) 72%,
-        hsl(203deg 57% 10%) 83%,
-        hsl(201deg 62% 7%) 86%,
-        hsl(200deg 64% 6%) 89%,
-        hsl(200deg 64% 6%) 92%,
-        hsl(200deg 64% 6%) 95%,
-        hsl(200deg 64% 6%) 97%,
+        0deg,
+        hsl(200deg 64% 6%) 0%,
+        hsl(204deg 38% 9%) 7%,
+        hsl(205deg 29% 11%) 13%,
+        hsl(207deg 23% 13%) 20%,
+        hsl(208deg 21% 14%) 27%,
+        hsl(206deg 26% 12%) 33%,
+        hsl(205deg 33% 10%) 40%,
+        hsl(202deg 47% 8%) 47%,
+        hsl(202deg 47% 8%) 53%,
+        hsl(205deg 33% 10%) 60%,
+        hsl(206deg 26% 12%) 67%,
+        hsl(208deg 21% 14%) 73%,
+        hsl(207deg 23% 13%) 80%,
+        hsl(205deg 29% 11%) 87%,
+        hsl(204deg 38% 9%) 93%,
         hsl(200deg 64% 6%) 100%
     );
     overflow: hidden;
@@ -569,7 +567,7 @@ header.hero {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: none;
     opacity: 0.02;
     filter: blur(100px);
     z-index: -1;
@@ -600,7 +598,6 @@ header.hero {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), transparent);
     transition: width 0.3s ease;
 }
 
@@ -736,9 +733,8 @@ header.hero {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: none;
     opacity: 0.03;
-    filter: blur(80px);
     z-index: -1;
 }
 
@@ -762,9 +758,8 @@ header.hero {
     position: relative;
     padding: 40px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: none;
+    
 }
 
 .about-me-image {
