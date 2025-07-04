@@ -1910,4 +1910,110 @@ footer {
         max-width: 100%;
         padding: 1.5rem;
     }
+    
+    .vorteil-section {
+        text-align: center;
+        padding: 80px 20px;
+        background: none;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .vorteil-section h2 {
+        font-size: 2.5rem;
+        color: var(--text-color);
+        margin-bottom: 60px;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .vorteil-section h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: var(--primary-color);
+      }
+      
+      .vorteil-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      
+      .vorteil-step {
+        text-align: center;
+        flex: 1;
+        min-width: 220px;
+        max-width: 280px;
+        position: relative;
+        transition: transform 0.6s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .vorteil-step:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      .vorteil-circle {
+        width: 4.375rem;
+        height: 4.375rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-color), #e47813);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        font-weight: bold;
+        margin: 1.5rem 0 1.25rem;
+        box-shadow: 0 4px 15px rgba(216, 114, 18, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .vorteil-step:hover .vorteil-circle {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(216, 114, 18, 0.4);
+      }
+      
+      .vorteil-step h3 {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: var(--text-color);
+        min-height: 2.5rem;
+        line-height: 1.4;
+      }
+      
+      .vorteil-step p {
+        font-size: 0.95rem;
+        color: rgba(226, 226, 210, 0.8);
+        line-height: 1.6;
+        margin: 0;
+        padding-bottom: 1.5rem;
+      }
+      
+      .orb-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+      }
+
+
 }
