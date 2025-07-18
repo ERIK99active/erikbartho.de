@@ -334,12 +334,12 @@
     <h2>Ihre Vorteile</h2>
     <div class="services-container">
         <div class="service-box">
-            <img src="icons/verkaufspreise_icon_256x.png" alt="Höhere Verkaufspreise">
+            <img src="icons/verkaufspreise_icon_256x_2.svg" alt="Höhere Verkaufspreise">
             <h3>Höhere Verkaufspreise</h3>
             <p>Professionell fotografierte Immobilien erzielen nachweislich höhere Verkaufspreise. Laut einer Studie von Redfin können diese Immobilien für einen höheren Preis verkauft werden. Ein kleiner Aufwand, mit großer Wirkung!</p>
         </div>
         <div class="service-box">
-            <img src="icons/mehr_anfragen_icon_256x.png" alt="Mehr Anfragen & Sichtbarkeit">
+            <img src="icons/mehr_anfragen_icon_256x.svg" alt="Mehr Anfragen & Sichtbarkeit">
             <h3>Mehr Anfragen & Sichtbarkeit</h3>
             <p>Attraktive Fotos stechen online hervor und erhöhen die Sichtbarkeit Ihrer Anzeigen. So steigt die Chance, dass Interessenten Ihre Anzeige anklicken, Kontakt aufnehmen und einen Besichtigungstermin vereinbaren.</p>
         </div>
@@ -349,7 +349,7 @@
             <p>Ein professioneller Auftritt vermittelt Seriosität, Professionalität und Qualität. So schaffen Sie Vertrauen bei potenziellen Käufern und präsentieren Ihre Immobilien überzeugend und hochwertig.</p>
         </div>
         <div class="service-box">
-            <img src="icons/wettbewerbsvorteil_icon_256x.png" alt="Wettbewerbsvorteil">
+            <img src="icons/wettbewerbsvorteil_icon_256x.svg" alt="Wettbewerbsvorteil">
             <h3>Wettbewerbsvorteil</h3>
             <p>Im hart umkämpften Markt sind hochwertige Fotos ein entscheidender Faktor, um sich von der Konkurrenz abzuheben und neue Kunden zu gewinnen. Beeindrucken Sie mit Qualität und Professionalität.</p>
         </div>
@@ -518,15 +518,18 @@
     </div>
   
     <script>
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('click', () => {
-          // Alle schließen
-          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-          // Aktuelles öffnen
-          item.classList.add('active');
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            // Alle schließen
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            // Nur öffnen, wenn sie vorher nicht aktiv war
+            if (!isActive) {
+              item.classList.add('active');
+            }
+          });
         });
-      });
-    </script>
+      </script>
   </section>
   
 
