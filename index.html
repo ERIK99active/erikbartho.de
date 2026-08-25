@@ -392,21 +392,95 @@
     </section>
 
 <!-- About Me Section -->
-<section class="about-me">
-    <div class="about-me-container">
-        <div class="about-me-image">
-            <img src="Images/Profilbild_Final_1_klein.jpg" alt="Bild von mir">
-        </div>
-        <div class="about-me-text">
-            <h2>Über mich</h2>
-            <p>Ich bin Erik Bartho, 23 Jahre alt, Videograf und Fotograf mit klarem Fokus auf Immobilienpräsentation.
-                Mit einem geschulten Auge für Architektur, Licht und Atmosphäre produziere ich visuelle Inhalte, die Immobilien nicht nur zeigen, sondern erlebbar machen. Klar, hochwertig und auf den Punkt gebracht.
-                Ob modernes Penthouse oder sanierter Altbau ich sorge dafür, dass jedes Objekt so wirkt, wie es wirken soll: überzeugend.
-                Mein Schwerpunkt liegt auf Content für Social Media – optimiert für Reichweite, Relevanz und Wiedererkennungswert. Ziel sind Aufnahmen, die bleiben und Immobilien, die sich besser verkaufen.
-            </p>
-        </div>
-    </div>
+<section class="about-me" aria-labelledby="about-me-title">
+  <div class="about-me-container">
+      <div class="about-me-image">
+          <img
+              src="Images/Profilbild_Final_1_klein.jpg"
+              alt="Erik Bartho – Videograf und Fotograf"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async"
+          >
+          <span class="about-me-image-label">Videograf &amp; Fotograf</span>
+      </div>
+
+      <div class="about-me-text">
+          <span class="about-me-eyebrow">Über mich</span>
+          <h2 id="about-me-title">Erik Bartho</h2>
+
+          <p>
+              Ich bin Videograf und Fotograf mit klarem Fokus auf Immobilienpräsentation.
+              Mit einem geschulten Auge für Architektur, Licht und Atmosphäre produziere
+              ich visuelle Inhalte, die Immobilien nicht nur zeigen, sondern erlebbar machen.
+          </p>
+
+          <p>
+              Mein Schwerpunkt liegt auf Content für Social Media. Optimiert für Reichweite,
+              Relevanz und Wiedererkennungswert. Ob modernes Penthouse oder sanierter Altbau:
+              Ich sorge dafür, dass jedes Objekt klar, hochwertig und überzeugend präsentiert wird.
+          </p>
+
+          <ul class="about-me-focus" aria-label="Arbeitsschwerpunkte">
+              <li>Immobilienvideos</li>
+              <li>Social Media</li>
+              <li>Fotografie</li>
+          </ul>
+      </div>
+  </div>
 </section>
+
+
+<section class="featured-partner" aria-labelledby="featured-partner-title">
+  <div class="featured-partner__card">
+      <div class="featured-partner__visual" aria-hidden="true">
+          <!-- Profilbild in den Images-Ordner legen und den Dateinamen bei Bedarf anpassen. -->
+          <img
+              src="Images/beach-portrait-1200w.jpg"
+              alt=""
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async"
+          >
+          <span class="featured-partner__visual-label">Fotografie</span>
+      </div>
+
+      <div class="featured-partner__content">
+          <span class="featured-partner__eyebrow">Empfohlene Partnerin</span>
+
+          <h2 id="featured-partner-title">
+              Fotografie, die echte Momente festhält.
+          </h2>
+
+          <p>
+            Wenn Sie ergänzend zur Videografie auch eine fotografische Begleitung suchen, kann ich Ihnen Alina aus persönlicher Überzeugung empfehlen. Ich kenne sie und ihre Arbeit sehr gut und schätze besonders ihre natürliche Art sowie ihren authentischen und emotionalen Bildstil.
+
+          </p>
+
+          <ul class="featured-partner__services" aria-label="Fotografie-Schwerpunkte">
+              <li>Hochzeiten &amp; Events</li>
+              <li>Business</li>
+              <li>Weingüter</li>
+              <li>Portrait &amp; Lifestyle</li>
+          </ul>
+
+          <a
+              class="featured-partner__link"
+              href="https://www.alinamund.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Website von Alina Mund, Fotografin in Ettlingen und Karlsruhe, in einem neuen Tab öffnen"
+          >
+              Alina Mund kennenlernen
+              <span aria-hidden="true">↗</span>
+          </a>
+      </div>
+  </div>
+</section>
+
+
 
 <section class="extra-services">
     <h2>Ihre Vorteile</h2>
@@ -746,7 +820,7 @@
         
         // Progress animation setup
         let progress = 0;
-        const duration = 7500;
+        const duration = 4000;
         const intervalTime = duration / 100;
         
         // Increment progress bar
