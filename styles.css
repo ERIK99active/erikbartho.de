@@ -914,6 +914,14 @@ header.hero {
 }
 
 /* Über mich – passend zur Partnersektion */
+html {
+    scroll-behavior: smooth;
+}
+
+#kontakt {
+    scroll-margin-top: 40px;
+}
+
 .about-me {
     padding: 120px 20px 40px;
     background: none;
@@ -983,6 +991,22 @@ header.hero {
     border: 1px solid rgba(226, 226, 210, 0.10);
 }
 
+.about-me-image-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
 .about-me-image img {
     width: 100%;
     height: 100%;
@@ -998,9 +1022,15 @@ header.hero {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.about-me-image:hover img {
+.about-me-image-link:hover img,
+.about-me-image-link:focus-visible img {
     transform: scale(1.025);
     box-shadow: 0 20px 50px rgba(216, 114, 18, 0.18);
+}
+
+.about-me-image-link:focus-visible {
+    outline: 3px solid rgba(226, 226, 210, 0.9);
+    outline-offset: 6px;
 }
 
 .about-me-image-label {
@@ -1018,6 +1048,7 @@ header.hero {
     white-space: nowrap;
     transform: translateX(-50%);
     box-shadow: 0 6px 18px rgba(216, 114, 18, 0.28);
+    pointer-events: none;
 }
 
 .about-me-text {
@@ -1144,6 +1175,10 @@ header.hero {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
     .about-me-image img {
         transition: none;
     }

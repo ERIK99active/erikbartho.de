@@ -395,14 +395,21 @@
 <section class="about-me" aria-labelledby="about-me-title">
   <div class="about-me-container">
       <div class="about-me-image">
-          <img
-              src="Images/Profilbild_Final_1_klein.jpg"
-              alt="Erik Bartho – Videograf und Fotograf"
-              width="800"
-              height="800"
-              loading="lazy"
-              decoding="async"
+          <button
+              type="button"
+              class="about-me-image-link"
+              aria-label="Zum Kontaktformular scrollen"
+              title="Zum Kontaktformular"
           >
+              <img
+                  src="Images/Profilbild_Final_1_klein.jpg"
+                  alt="Erik Bartho – Videograf und Fotograf"
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+              >
+          </button>
           <span class="about-me-image-label">Videograf &amp; Fotograf</span>
       </div>
 
@@ -417,7 +424,7 @@
           </p>
 
           <p>
-              Mein Schwerpunkt liegt auf Content für Social Media. Optimiert für Reichweite,
+              Mein Schwerpunkt liegt auf Content für Social Media – optimiert für Reichweite,
               Relevanz und Wiedererkennungswert. Ob modernes Penthouse oder sanierter Altbau:
               Ich sorge dafür, dass jedes Objekt klar, hochwertig und überzeugend präsentiert wird.
           </p>
@@ -953,6 +960,34 @@
             video.currentTime = 0;
         }
     }
+
+
+    
+document.addEventListener('DOMContentLoaded', () => {
+    const profileButton = document.querySelector('.about-me-image-link');
+    const contactForm = document.getElementById('kontakt');
+
+    if (!profileButton || !contactForm) return;
+
+    profileButton.addEventListener('click', () => {
+    const reducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (reducedMotion) {
+        contactForm.scrollIntoView({
+            behavior: 'auto',
+            block: 'center'
+        });
+    } else {
+        smoothScroll('kontakt', 500);
+    }
+});
+});
+
+
+
+
 </script>  
 </body>
 </html>
